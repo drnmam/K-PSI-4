@@ -1,0 +1,255 @@
+@charset "utf-8";
+
+/* 로그인 */
+
+.checkbox {display:inline-block; position:relative; z-index:1;}
+.checkbox input {position:absolute; opacity:0; cursor:pointer; height:0; width:0;}
+.checkbox label {padding-left:30px;}
+.checkbox .checkmark {position: absolute; top:50%; left:0; height:20px; width:20px; transform:translateY(-50%); background:url('../images/sub/checkbox_off.png') 0 0 no-repeat; background-size:100% 100%; z-index:-1;}
+.checkbox input:checked ~ .checkmark {background-image:url('../images/sub/checkbox_on.png');}
+.checkbox input:checked ~ .checkmark:after {display:block;}
+
+.login-area {text-align:center; width:100%; max-width:500px; margin:0 auto;}
+.login-area .login-tab ul {}
+.login-area .login-tab ul:after {content:""; display:block; clear:both;}
+.login-area .login-tab ul li {float:left; width:50%; height:51px;}
+.login-area .login-tab ul li a {display:block; text-align:center; background:#fff; border-radius:10px 10px 0 0; text-align:center; line-height:51px; font-size:18px; font-weight:700; color:#2c2c2c; letter-spacing:-0.04em;}
+.login-area .login-tab ul li.active a {background:#454545; color:#fbbe3f;}
+.login-area .login-box {width:100%; border:1px solid #505050; border-top:3px solid #454545; background:#fff; text-align:center; padding:40px; border-radius:0 0 10px 10px;}
+.login-area .login-box .tit {margin-bottom:20px;}
+.login-area .login-box .tit p {font-family:'Malgun Gothic'; font-size:16px; color:#505050; line-height:1.3em;}
+.login-area .login-box .form {text-align:left;}
+.login-area .login-box .form fieldset {position:relative;}
+.login-area .login-box .form .group {padding:7px 0; text-align:left;}
+.login-area .login-box .form .input {height:52px; padding:5px 20px; font-family:'Malgun Gothic'; font-size:14px; line-height:40px; border:1px solid #dfdfdf; vertical-align:middle; border-radius:10px;}
+.login-area .login-box .form .select {height:52px; padding:5px 20px; font-family:'Malgun Gothic'; font-size:14px; line-height:40px; border:1px solid #dfdfdf; vertical-align:middle; border-radius:10px;}
+.login-area .login-box .form .btn-pack.login {position:relative; width:100%; height:52px; text-align:center; background:#fd8239; font-size:20px; color:#fff; font-weight:700; letter-spacing:-0.04em; border-radius:10px;}
+
+.login-area .member-details {padding:11px 0 18px;}
+.login-area .member-details:after {content:""; display:block; clear:both;}
+.login-area .member-details .id-remember {float:left; font-family:'Malgun Gothic'; font-size:14px; line-height:20px; color:#505050; font-weight:700;}
+.login-area .member-details .not-member {float:right;}
+.login-area .member-details .not-member ul {}
+.login-area .member-details .not-member ul:after {content:""; display:block; clear:both;}
+.login-area .member-details .not-member ul li {float:left; padding-left:20px; position:relative;}
+.login-area .member-details .not-member ul li:after {content:""; position:absolute; top:50%; left:10px; width:1px; height:20px; background:#dfdfdf; margin-top:-10px;}
+.login-area .member-details .not-member ul li:first-child {padding-left:0;}
+.login-area .member-details .not-member ul li:first-child:after {display:none;}
+.login-area .member-details .not-member ul li a {display:block; font-family:'Malgun Gothic'; font-size:14px; line-height:20px; color:#505050; font-weight:700;}
+.login-area .tt-or {height:52px; text-align:center; position:relative;}
+.login-area .tt-or:after {content:""; position:absolute; top:50%; left:0; width:100%; height:1px; background:#dfdfdf; z-index:1;}
+.login-area .tt-or span {display:inline-block; position:relative; padding:0 39px; background:#fff; z-index:5; font-size:17px; line-height:52px; font-weight:700; color:#878787;}
+.login-area .sns-login {width:100%;}
+.login-area .sns-login ul li {margin-bottom:11px;}
+.login-area .sns-login ul li:last-child {margin-bottom:0;}
+.login-area .sns-login ul li a {display:block; position:relative; text-align:left; width:100%; height:52px; padding-left:77px; font-size:18px; line-height:52px; letter-spacing:-0.04em; border-radius:10px; overflow:hidden;}
+.login-area .sns-login ul li a:after {content:""; position:absolute; top:0; left:0; width:58px; height:52px; background-position:center center; background-repeat:no-repeat; background-size:100% 100%;}
+.login-area .sns-login ul li a:last-child {margin-bottom:0;}
+.login-area .sns-login ul li.naver a {background:#1fc900; color:#fff;}
+.login-area .sns-login ul li.naver a:after {background-color:#1fc900; background-image:url('../images/sub/icon_naver.png');}
+.login-area .sns-login ul li.kakao a {background:#fbe300; color:#3b1e1e;}
+.login-area .sns-login ul li.kakao a:after {background-color:#fbe300; background-image:url('../images/sub/icon_kakao.png');}
+
+/* 회원정보 */
+.join-area {text-align:center; width:100%; max-width:998px; margin:0 auto;}
+.join-area.mypage-join-area {max-width:1200px;}
+.join-area .join-tab ul {}
+.join-area .join-tab ul:after {content:""; display:block; clear:both;}
+.join-area .join-tab ul li {float:left; width:25%; height:51px;}
+.join-area .join-tab ul li span {display:block; text-align:center; background:#fff; border:1px solid #dfdfdf; border-bottom:0; border-left:0; border-radius:10px 10px 0 0; text-align:center; line-height:50px; font-size:18px; font-weight:700; color:#2c2c2c; letter-spacing:-0.04em;}
+.join-area .join-tab ul li:first-child span {border-left:1px solid #dfdfdf;}
+.join-area .join-tab ul li.active span {border:1px solid #454545; border-bottom:0; background:#454545; color:#fbbe3f;}
+.join-area .join-tab ul li.disabled span {border:1px solid #aaa; border-bottom:0; background:#aaaaaa; color:#505050;}
+.join-area .join-box {width:100%; border:1px solid #505050; border-top:3px solid #454545; background:#fff; text-align:center; padding:40px; border-radius:0 0 10px 10px;}
+
+.join-area .btn-zone {margin-top:58px; text-align:center;}
+.join-area .btn-zone .btn-pack {margin:0 5px;}
+.join-area .btn-pack.join {display:inline-block; width:130px; height:52px; border-radius:26px; border:0; background:#fd8239; font-size:20px; line-height:52px; color:#fff; letter-spacing:0; font-weight:800;}
+.join-area .btn-pack.join-prev {display:inline-block; width:130px; height:52px; border-radius:26px; border:0; background:#505050; font-size:20px; line-height:52px; color:#fff; letter-spacing:0; font-weight:800;}
+
+.join-area .join-box .agree-box {text-align:left; margin-bottom:38px;}
+.join-area .join-box .agree-box:last-child {margin-bottom:0;}
+.join-area .join-box .agree-box .tt {position:relative; margin-bottom:14px;}
+.join-area .join-box .agree-box .tt h3 {font-size:20px; line-height:1.3em; font-weight:800; color:#2c2c2c; letter-spacing:-0.04em;}
+.join-area .join-box .agree-box .tt .chk {position:absolute; bottom:0; right:0;}
+.join-area .join-box .agree-box .box {padding:20px 40px; max-height:270px; background:#fff; font-family:'Malgun Gothic'; font-size:16px; line-height:24px; color:#505050; border:1px solid #ccc; border-top:2px solid #fbbe3f; border-radius:0 0 5px 5px; overflow:auto;}
+
+.join-area .type-choice {padding:40px 0;}
+.join-area .type-choice .tt {margin-bottom:45px; font-size:20px; line-height:1.3em; color:#2c2c2c; letter-spacing:-0.04em;}
+.join-area .type-choice .list ul {display:inline-block;}
+.join-area .type-choice .list ul:after {content:""; display:block; clear:both;}
+.join-area .type-choice .list ul li {float:left; max-width:238px; padding:0 29px;}
+.join-area .type-choice .list ul li .radiobox2 {display:block; position:relative;}
+.join-area .type-choice .list ul li .radiobox2 input {position:absolute; opacity:0; cursor:pointer; height:0; width:0;}
+.join-area .type-choice .list ul li .radiobox2 label .pic {position:relative; margin-bottom:54px;}
+.join-area .type-choice .list ul li .radiobox2 label .pic:after {content:""; position:absolute; top:0; left:0; width:100%; height:100%; border-radius:10px; border:1px solid #dfdfdf;}
+.join-area .type-choice .list ul li .radiobox2 label span {font-family:'Malgun Gothic'; font-size:14px; line-height:1.3em; color:#505050; letter-spacing:0;}
+.join-area .type-choice .list ul li .radiobox2 .checkmark {position: absolute; bottom:33px; left:50%; height:20px; width:20px; transform:translateX(-50%); background:url('../images/sub/checkbox_off.png') 0 0 no-repeat; background-size:100% 100%;}
+.join-area .type-choice .list ul li .radiobox2 input:checked ~ .checkmark {background-image:url('../images/sub/checkbox_on.png');}
+.join-area .type-choice .list ul li .radiobox2 input:checked ~ label .pic:after {border:3px solid #fd8239;}
+
+/* .join-area .form {margin-top:7px;}
+.join-area .form table {width:100%; border-collapse:collapse; border-spacing:0px; border-top:1px solid #d8d8d8;}
+.join-area .form table th {padding:9px 20px; height:35px; color:#333; font-size:15px; font-weight:400; text-align:left; background:#f9f9f9; border-bottom:1px solid #d8d8d8;}
+.join-area .form table th .asterisk {padding-left:8px; font-size:16px; font-weight:500; color:#d30000;}
+.join-area .form table td {padding:9px 20px; font-size:15px; border-bottom:1px solid #d8d8d8;}
+.join-area .form table td * {vertical-align:middle;}
+.join-area .form table td .txt {color:#80838b;} */
+.join-area .refer {padding:40px 15px; background:#eee; margin-bottom:30px; text-align:center; font-size:20px; line-height:28px; color:#2c2c2c; letter-spacing:-0.04em; font-weight:800;}
+.join-area .form {text-align:left; margin-bottom:50px;}
+.join-area .form:last-child {margin-bottom:0;}
+.join-area .form .tit {margin-bottom:15px;}
+.join-area .form .tit h3 {font-size:20px; line-height:1.3em; color:#2c2c2c; letter-spacing:-0.04em; font-weight:800;}
+.join-area .form table {width:100%; border-collapse:collapse; border-spacing:0px; border-top:2px solid #fbbe3f;}
+.join-area .form table tbody th {height:60px; border:1px solid #dfdfdf; background:#f8f8f8; text-align:center; font-size:18px; letter-spacing:-0.04em; color:#2c2c2c;}
+.join-area .form table tbody th:first-child {border-left:0;}
+.join-area .form table tbody td {padding:10px 0 10px 30px; border:1px solid #dfdfdf; font-size:18px; line-height:28px; letter-spacing:-0.04em; color:#2c2c2c;}
+.join-area .form table tbody td:first-child {border-left:0;}
+.join-area .form table tbody td:last-child {border-right:0;}
+.join-area .form table tbody td strong {font-size:24px; font-weight:800;}
+.join-area .form table tbody td .input {font-family:'Malgun Gothic'; height:40px; padding:5px 9px; font-size:18px; line-height:28px; border-radius:5px;}
+.join-area .form table tbody td .textarea {font-family:'Malgun Gothic'; border-radius:5px; font-size:18px; line-height:28px;}
+.join-area .form table tbody td .select {font-family:'Malgun Gothic'; height:40px; padding:5px; font-size:18px; line-height:28px; border-radius:5px;}
+
+.join-area .join-agree-box {text-align:left; margin-bottom:38px;}
+.join-area .join-agree-box .tt {position:relative; margin-bottom:14px;}
+.join-area .join-agree-box .tt h3 {font-size:20px; line-height:1.3em; font-weight:800; color:#2c2c2c; letter-spacing:-0.04em;}
+.join-area .join-agree-box .tt .chk {position:absolute; bottom:0; right:0;}
+.join-area .join-agree-box .box {padding:20px 40px; max-height:270px; background:#fff; font-family:'Malgun Gothic'; font-size:16px; line-height:24px; color:#505050; border:1px solid #ccc; border-top:2px solid #fbbe3f; border-radius:0 0 5px 5px; overflow:auto;}
+
+.join-area .completion-box {padding:40px 0;}
+.join-area .completion-box .icon {line-height:0; margin-bottom:25px;}
+.join-area .completion-box .tt {font-size:20px; line-height:1.3em; color:#2c2c2c; letter-spacing:-0.04em; font-weight:800;}
+.join-area .completion-box .btn {margin-top:33px;}
+.join-area .completion-box .btn ul {display:inline-block;}
+.join-area .completion-box .btn ul:after {content:""; display:block; clear:both;}
+.join-area .completion-box .btn ul li {float:left; padding:0 5px;}
+.join-area .completion-box .btn ul li a {display:block; width:150px; height:52px; border-radius:26px; background:#fd8239; font-size:20px; line-height:52px; color:#fff; letter-spacing:-0.04em; font-weight:800;}
+
+.agree {color:#666;}
+.agree .group {margin-bottom:35px;}
+.agree .group:last-child {margin-bottom:0;}
+
+.agree h4 {font-size:14px; font-weight:400; color:#444; margin:0 0 10px 0;}
+.agree p {text-align:left; margin-bottom:10px; font-size:14px;}
+.agree p:last-child {margin-bottom:0;}
+.agree p strong {font-weight:700; font-size:16px;}
+.agree ol li span {font-weight:500;}
+.agree .f-c1 {font-size:16px; color:#ff0000;}
+.agree dl {padding: 0 0 20px 0;}
+.agree dt {font-weight:700;}
+.agree dd {font-size:14px;}
+.agree dd.f-s-big {font-size:16px;}
+.agree dd ul {padding:4px 0;}
+.agree li dl {padding:5px 0;}
+.agree li {padding: 0 0 0 6px;}
+.agree strong {font-weight:700;}
+.agree .sub-law dt {font-weight:normal;}
+.agree .policy-list {*zoom:1;}
+.agree .policy-list:after {content:" "; display:block; clear:both;}
+.agree .policy-list {padding:10px; background:#f9f9f9; border-top:1px solid #ddd; margin: 0 0 20px 0;}
+.agree .policy-list li {float:left; width:50%; padding: 5px 15px 5px 15px; line-height:22px; box-sizing:border-box;}
+.agree .policy-list span {color:#999999; font-size:14px;}
+.agree .policy-list a {color:#666; font-size:14px;}
+.agree .contact-info {*zoom:1; margin:20px 0;}
+.agree .contact-info:after {content:" "; display:block; clear:both;}
+.agree .contact-info li {float:left; width:270px; border:1px solid #aaa; padding:5px 15px; margin:0 10px 0 0; text-indent:0;}
+
+/* 아이디/비밀번호 찾기 */
+.find-wrap {text-align:center;}
+.find-account {display:inline-block;*zoom:1;*display:inline;vertical-align:top; background:#fff; margin:0 15px; padding:22px 22px; border:1px solid #ddd; border-radius:10px;}
+.find-account .tit {padding-bottom:16px; border-bottom:1px solid #eee; text-align:left;}
+.find-account .tit h3 {margin-bottom:5px; font-size:18px; font-weight:800; color:#333; line-height:1.2em; letter-spacing:-1px;}
+.find-account .tit p {font-family:'Malgun Gothic'; font-size:13px; font-weight:300; color:#888; line-height:1.2em;}
+.find-account .form {padding:20px 15px; text-align:left;}
+.find-account .form fieldset {position:relative; padding:0 80px 0 0;}
+.find-account .form .group {padding:3px 10px 3px 0; text-align:left;}
+.find-account .form .group label {display:inline-block;zoom:1;*display:inline;width:74px;height:30px;font-family:'Malgun Gothic';font-size:14px;line-height:30px;font-weight:400;color:#333;vertical-align:middle;}
+.find-account .form .input {height:35px; padding:5px 5px; font-family:'Malgun Gothic'; font-size:14px; line-height:23px; border:1px solid #ddd;vertical-align:middle;}
+.find-account .form .select {height:35px; padding:5px 5px; font-family:'Malgun Gothic'; font-size:14px; line-height:23px; border:1px solid #ddd;vertical-align:middle;}
+.find-account .form .btn-pack.btn {position:absolute; top:3px; right:0; width:80px; height:76px; font-size:18px; font-weight:800;}
+.find-account .result {padding:20px 0 10px; border-top:1px solid #ddd;}
+.find-account .result p {margin-bottom:10px; font-family:'Malgun Gothic'; font-size:13px;}
+.find-account .result dt {padding:4px; font-family:'Malgun Gothic'; font-size:14px; color:#212121; background:#f4f4f4; margin-bottom:1px;}
+.find-account .result dd {padding:4px; font-family:'Malgun Gothic'; font-size:13px; background:#f4f4f4;}
+
+/* 회원탈퇴 */
+.member-leave {width:550px; padding:25px 20px; margin:0 auto; text-align:center; border:1px solid #ddd; border-radius:10px;}
+.member-leave .top {text-align:center; color:#767676; font-family:'Malgun Gothic'; font-size:13px; line-height:22px; border-bottom:1px solid #eee; background:url('../images/bbs/notice.png') 50% 10px no-repeat; padding:80px 0 30px 0; margin-bottom:30px;}
+.member-leave .top strong {color:#000; font-size:15px;}
+.member-leave fieldset {display:inline-block;}
+.member-leave fieldset p {margin-bottom:20px; color:#419bda; font-family:'Malgun Gothic';}
+.member-leave fieldset .group {padding:3px 0;}
+.member-leave fieldset .group label {display:inline-block;zoom:1;*display:inline;width:90px;font-family:'Malgun Gothic';height:26px;line-height:30px;font-weight:400;text-align:left;color:#333;}
+.member-leave fieldset .btn-pack {font-family:'Malgun Gothic';}
+
+/* 마이페이지 */
+.myreservation-view .table table {width:100%; border-collapse:collapse; border-spacing:0px; border-top:2px solid #fbbe3f;}
+.myreservation-view .table table thead th {height:60px; border:1px solid #dfdfdf; background:#f8f8f8; font-size:20px; letter-spacing:-0.04em; color:#2c2c2c;}
+.myreservation-view .table table thead th:first-child {border-left:0;}
+.myreservation-view .table table thead th:last-child {border-right:0;}
+.myreservation-view .table table tbody th {height:60px; border:1px solid #dfdfdf; background:#f8f8f8; font-size:18px; letter-spacing:-0.04em; color:#2c2c2c;}
+.myreservation-view .table table tbody th:first-child {border-left:0;}
+.myreservation-view .table table tbody td {padding:15px 5px; text-align:center; border:1px solid #dfdfdf; font-size:18px; line-height:28px; letter-spacing:-0.04em; color:#2c2c2c;}
+.myreservation-view .table table tbody td:first-child {border-left:0;}
+.myreservation-view .table table tbody td:last-child {border-right:0;}
+.myreservation-view .table table tbody td strong {font-size:24px; font-weight:800;}
+.myreservation-view .table table tbody td.space-left {padding-left:30px;}
+.myreservation-view .table table tbody td .input {height:40px; padding:5px 9px; font-size:18px; line-height:28px; border-radius:5px;}
+.myreservation-view .table table tbody td .textarea {border-radius:5px; font-size:18px; line-height:28px;}
+.myreservation-view .table table tbody td .select {height:40px; padding:5px; font-size:18px; line-height:28px; border-radius:5px;}
+.myreservation-view .table table tbody td .input-lst:after {content:""; display:block; clear:both;}
+.myreservation-view .table table tbody td .input-lst li {float:left; margin-right:25px;}
+.myreservation-view .table table tbody td .input-lst li:last-child {margin-right:0;}
+.myreservation-view .table table tbody td a.btn1 {display:block; margin:0 auto; width:158px; height:40px; border-radius:20px; background:#ffb825; font-size:18px; line-height:40px; font-weight:700; color:#2c2c2c; letter-spacing:-0.04em;}
+.myreservation-view .calendar-zone {border:1px solid #dfdfdf; margin-top:10px; padding:40px 20px;}
+.myreservation-view .calendar-zone:after {content:""; display:block; clear:both;}
+.myreservation-view .calendar-zone .btn2 {margin-top:77px; text-align:center;}
+.myreservation-view .calendar-zone .btn2 ul {display:inline-block;}
+.myreservation-view .calendar-zone .btn2 ul:after {content:""; display:block; clear:both;}
+.myreservation-view .calendar-zone .btn2 ul li {float:left; padding:0 5px;}
+.myreservation-view .calendar-zone .btn2 ul li a {display:block; width:178px; height:52px; border-radius:26px; font-size:20px; line-height:52px; font-weight:700; letter-spacing:-0.04em; color:#fff; border:0;}
+.myreservation-view .calendar-zone .btn2 ul li a.bg1 {background:#505050;}
+.myreservation-view .calendar-zone .btn2 ul li a.bg2 {background:#fd8239;}
+.myreservation-view .homecam-list-choice {border-top:2px solid #fbbe3f; border-bottom:1px solid #dfdfdf; padding-top:40px; padding-bottom:40px; text-align:center;}
+.myreservation-view .homecam-list-choice .box {display:inline-block;}
+.myreservation-view .homecam-list-choice .box .pic {position:relative; width:100%; height:0; padding-bottom:100%; overflow:hidden; margin-bottom:12px; border-radius:5px;}
+.myreservation-view .homecam-list-choice .box .pic img {position:absolute; top:0; left:0; width:100%; height:100%;}
+.myreservation-view .homecam-list-choice .box .tit {font-size:18px; line-height:26px; letter-spacing:-0.04em; color:#2c2c2c; margin-bottom:15px;}
+.myreservation-view .homecam-list-choice .box .tit span {display:block; font-family:'Malgun Gothic'; font-size:14px; color:#2c2c2c; letter-spacing:-0.06em;}
+.myreservation-view .homecam-list-choice .box .btn a {display:block; margin:0 auto; width:105px; height:40px; border-radius:20px; background:#ffb825; font-size:18px; line-height:40px; font-weight:700; letter-spacing:-0.04em;}
+.myreservation-view .pos-tit {position:relative;}
+.myreservation-view .pos-tit .btn-change {position:absolute; top:0; right:0; text-align:center; width:105px; height:40px; border-radius:20px; background:#ffb825; font-size:18px; line-height:40px; font-weight:700; letter-spacing:-0.04em;}
+
+.myreservation-view .btn-zone {margin:40px 0; text-align:center;}
+.myreservation-view .btn-zone .btn {display:inline-block; margin:0 10px; width:178px; height:52px; border-radius:26px; font-size:20px; font-weight:700; line-height:52px; letter-spacing:-0.04em; color:#fff;}
+.myreservation-view .btn-zone .btn.btn01 {background:#505050;}
+.myreservation-view .btn-zone .btn.btn02 {background:#fd8239;}
+
+.mypresent-view .table table {width:100%; border-collapse:collapse; border-spacing:0px; border-top:2px solid #fbbe3f;}
+.mypresent-view .table table thead th {height:60px; border:1px solid #dfdfdf; background:#f8f8f8; font-size:20px; letter-spacing:-0.04em; color:#2c2c2c;}
+.mypresent-view .table table thead th:first-child {border-left:0;}
+.mypresent-view .table table thead th:last-child {border-right:0;}
+.mypresent-view .table table tbody th {height:60px; border:1px solid #dfdfdf; background:#f8f8f8; font-size:18px; letter-spacing:-0.04em; color:#2c2c2c;}
+.mypresent-view .table table tbody th:first-child {border-left:0;}
+.mypresent-view .table table tbody td {padding:15px 5px; text-align:center; border:1px solid #dfdfdf; font-size:18px; line-height:28px; letter-spacing:-0.04em; color:#2c2c2c;}
+.mypresent-view .table table tbody td:first-child {border-left:0;}
+.mypresent-view .table table tbody td:last-child {border-right:0;}
+.mypresent-view .table table tbody td strong {font-size:24px; font-weight:800;}
+.mypresent-view .table table tbody td.space-left {padding-left:30px;}
+.mypresent-view .table table tbody td .input {height:40px; padding:5px 9px; font-size:18px; line-height:28px; border-radius:5px;}
+.mypresent-view .table table tbody td .textarea {border-radius:5px; font-size:18px; line-height:28px;}
+.mypresent-view .table table tbody td .select {height:40px; padding:5px; font-size:18px; line-height:28px; border-radius:5px;}
+.mypresent-view .table table tbody td .input-lst:after {content:""; display:block; clear:both;}
+.mypresent-view .table table tbody td .input-lst li {float:left; margin-right:25px;}
+.mypresent-view .table table tbody td .input-lst li:last-child {margin-right:0;}
+.mypresent-view .filebox {border-top:2px solid #fbbe3f; border-bottom:1px solid #dfdfdf; padding:20px 32px;}
+.mypresent-view .result-list {border-top:2px solid #fbbe3f;}
+.mypresent-view .result-list ul li {position:relative;padding:20px 180px 20px 30px; border-bottom:1px solid #dfdfdf;}
+.mypresent-view .result-list ul li:after {content:""; display:block; clear:both;}
+.mypresent-view .result-list ul li .tt {float:left; line-height:40px; font-size:20px; letter-spacing:-0.04em; font-weight:700; color:#2c2c2c;}
+.mypresent-view .result-list ul li .date {float:left; margin-left:20px;font-family:'Malgun Gothic'; line-height:40px; font-size:14px; letter-spacing:-0.04em; color:#878787;}
+.mypresent-view .result-list ul li .bt-down {position:absolute; top:50%; right:30px; margin-top:-20px; text-align:center; width:105px; height:40px; border-radius:20px; background:#505050; font-size:18px; line-height:40px; color:#fbbe3f; letter-spacing:-0.04em; font-weight:700;}
+.mypresent-view .btn-zone {margin:40px 0; text-align:center;}
+.mypresent-view .btn-zone a {display:inline-block; width:178px; height:52px; background:#505050; border-radius:26px; font-size:20px; font-weight:700; line-height:52px; letter-spacing:-0.04em; color:#fff;}
+.mypresent-view .btn-change {margin-bottom:10px; display:inline-block; text-align:center; width:105px; height:40px; border-radius:20px; background:#505050; font-size:18px; line-height:40px; color:#fbbe3f; letter-spacing:-0.04em; font-weight:700;}

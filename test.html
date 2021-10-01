@@ -1,0 +1,117 @@
+<html>
+
+
+<head>
+    <script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script>
+    <style>
+        #verticaltab {
+            margin: 0 auto;
+            width: 800px;
+            height: 100%;
+        }
+        #verticaltab > ul {
+            float: left;
+            width: 40px;
+            text-align: left;
+            display: block;
+            margin: auto 0;
+            padding: 0;
+            position: relative;
+        }
+
+        #verticaltab > ul > li {
+            width: 40px;
+            height: 140px;
+            background-color: #fff !important;
+            list-style-type: none;
+            display: block;
+            text-align: center;
+            margin: auto;
+            padding-bottom: 10px;
+            border: 1px solid #cdcdcd;
+		
+            position: relative;
+            border-right: none;
+            writing-mode: vertical-lr;
+            text-orientation: upright;
+        }
+		#verticaltab > ul > li a { 
+			font-size: 13px;
+			line-height: 45px;
+			text-decoration: none;
+			color: #0da2be;
+			font-weight: bold;
+		}
+		#verticaltab > ul > li.selected a, #verticaltab > ul > li a:hover {
+			color: #2F4F4F;
+		}
+		#verticaltab > ul > li.tabs {
+            background: #F0FFF0;
+        }
+        #verticaltab > ul > li.selected {
+            z-index: 10;
+            background-color: #fafafa !important;
+            position: relative;
+
+        }
+       
+        #verticaltab > div {
+            background-color: #fafafa;
+            margin-left: 40px;
+            border: 1px solid #ddd;
+            min-height: 500px;
+            padding: 12px;
+            position: relative;
+            z-index: 9;
+            border-radius: 0 20px 20px 20px;
+        }
+        #verticaltab > div > h4 {
+            color: #2F4F4F;
+            font-size: 1.2em;
+            padding-top: 5px;
+            margin-top: 0;
+        }
+        #verticaltab > div p { font-size: 0.9em; color: #7f7f7f;}
+    </style>
+</head>
+<body>
+    <div id="verticaltab">
+        <ul>
+           <li class="tabs selected"><a href="#">자녀 영역</a></li>
+           <li class="tabs"><a href="#">부모 영역</a></li>
+           <li class="tabs"><a href="#">생활 스트레스 영역</a></li> 
+       </ul>
+       <div>
+          <h4>This is the first tab</h4>
+          <p>Content Goes here..</p>
+       </div>
+       <div>
+          <h4>This is the second tab</h4>
+          <p>Content Goes here..</p>
+       </div>
+       <div>
+          <h4>This is the Third tab</h4>
+          <p>Content Goes here..</p>
+       </div>
+
+    </div>
+
+   
+</body>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        $(function() {
+            var $items = $('#verticaltab>ul>li');
+            $items.click(function() {
+                $items.removeClass('selected');
+                $(this).addClass('selected');
+
+                var index = $items.index($(this));
+                $('#verticaltab>div').hide().eq(index).show();
+            }).eq(1).mouseover();
+
+            $items.eq(0).trigger("click");
+        });
+    });
+</script>
+</html>

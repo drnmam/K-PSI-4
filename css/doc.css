@@ -1,0 +1,184 @@
+@charset "utf-8";
+/* doc.css는 디자인페이지 스타일을 정의합니다. */
+
+.doc-tit {position:relative; padding-left:46px; margin-bottom:20px; font-size:26px; font-weight:800; line-height:1.5em; letter-spacing:0; color:#2c2c2c;}
+.doc-tit:before {content:""; position:absolute; top:4px; left:1px; width:29px; height:29px; background:url('../images/sub/dot1.png') 0 0 no-repeat; background-size:100% 100%;}
+
+.doc-cnt {margin-bottom:55px;}
+.doc-cnt:last-child {margin-bottom:0;}
+
+.introduce .title {display:table; table-layout:fixed; width:100%; margin-bottom:50px;}
+.introduce .title .cell {display:table-cell; vertical-align:middle; width:50%;}
+.introduce .title .tt {padding-left:95px;}
+.introduce .title .tt h3 {font-weight:800; font-size:40px; line-height:1.3em; color:#fd8239; letter-spacing:-0.04em; margin-bottom:20px;}
+.introduce .title .tt p {font-weight:700; font-size:24px; line-height:42px; letter-spacing:-0.04em; color:#2c2c2c;}
+.introduce .title .tt p span {color:#fd8239;}
+.introduce .title .pic {line-height:0;}
+.introduce .txt {text-align:center;}
+.introduce .txt p {font-size:18px; line-height:38px; letter-spacing:-0.04em; color:#2c2c2c; margin-bottom:40px;}
+.introduce .txt p:last-child {margin-bottom:0;}
+
+.doctor > ul {margin:0 -18.5px;}
+.doctor > ul:after {content:""; display:block; clear:both;}
+.doctor > ul > li {float:left; width:25%; padding:0 18.5px;}
+.doctor > ul > li .box {width:100%; padding:30px; border-radius:10px;}
+.doctor > ul > li .thumb {border-radius:10px; line-height:0; margin-bottom:24px; overflow:hidden;}
+.doctor > ul > li .name {position:relative; padding-right:50%; margin-bottom:20px;}
+.doctor > ul > li .name h3 {font-weight:800; font-size:32px; line-height:1.3em; color:#2c2c2c; letter-spacing:0.1em;}
+.doctor > ul > li .name span {position:absolute; top:5px; right:0; display:block; text-align:right; font-size:18px; line-height:22px; letter-spacing:-0.04em; color:#2c2c2c;}
+.doctor > ul > li .list ul li {position:relative; padding-left:19px; font-family:'Malgun Gothic'; font-size:14px; line-height:20px; color:#2c2c2c; margin-bottom:10px;}
+.doctor > ul > li .list ul li:last-child {margin-bottom:0;}
+.doctor > ul > li .list ul li:after {content:""; position:absolute; top:8px; left:0; width:6px; height:6px; border-radius:50%; background:#fff;}
+
+.doctor > ul > li.bg1 .box {background:#fecf6f;}
+.doctor > ul > li.bg2 .box {background:#f7ba72;}
+.doctor > ul > li.bg3 .box {background:#d7d364;}
+.doctor > ul > li.bg4 .box {background:#b8e1e7;}
+
+
+.history {position:relative;}
+.history:after {content:" "; position:absolute; top:100px; left:50%; width:1px; height:calc(100% - 100px); background:#dfdfdf; z-index:-1;}
+
+.history .title {position:relative; width:100%; height:166px; text-align:center; background:url('../images/sub/history_tt_bg.png') 50% 50% no-repeat; z-index:1; margin-bottom:33px;}
+.history .title p {font-size:80px; line-height:166px; font-weight:800; color:#2c2c2c; letter-spacing:0.3em;}
+.history .title p span.f-c1 {color:#fbbe3f;}
+.history .title p span.f-c2 {color:#fd8239; padding:0 35px 0 55px;}
+
+.history .group {position:relative; display:table; table-layout:fixed; width:100%; margin-bottom:50px;}
+.history .group:after {content:""; position:absolute; top:50%; left:50%; margin-left:-32px; margin-top:-32px; width:64px; height:64px; background:#ffcc64; border-radius:100%; z-index:2;}
+.history .group:before {content:""; position:absolute; top:50%; left:50%; margin-left:-12.5px; margin-top:-12.5px; width:25px; height:25px; background:#fff; border-radius:100%; z-index:3;}
+.history .group .pic-zone {position:relative; display:table-cell; vertical-align:middle; width:50%; padding-right:70px; text-align:right; z-index:2;}
+.history .group .txt {display:table-cell; vertical-align:middle; width:50%; padding-left:70px; text-align:left; z-index:2;}
+.history .group .tit {margin-bottom:8px; position:relative; z-index:2;}
+.history .group .tit h3 {font-size:28px; line-height:1em; font-weight:800; letter-spacing:-0.04em; color:#2c2c2c;}
+.history .group ul {position:relative; z-index:2;}
+.history .group ul li {position:relative; padding-bottom:8px; color:#505050; font-weight:700; letter-spacing:-0.04em; font-size:20px; line-height:36px;}
+.history .group ul li:last-child {padding-bottom:0;}
+.history .last{position:absolute;top:50%;left:-1px;right:-1px;bottom:0;background:#fff; z-index:1;}
+
+.map-zone {border-radius:10px; overflow:hidden; margin-bottom:30px;}
+.root_daum_roughmap {width:100% !important;}
+.root_daum_roughmap .wrap_map {width:100% !important;}
+.roughmap_maker_label {display:none !important;}
+.local ul {margin:0 -7.5px;}
+.local ul:after {content:""; display:block; clear:both;}
+.local ul li {float:left; width:33.333333%; padding:0 7.5px;}
+.local ul li .box {position:relative; width:100%; height:180px; padding:40px 20px 0 40px; border-radius:10px; overflow:hidden; background-position:100% 100%; background-repeat:no-repeat;}
+.local ul li .box:after {content:""; position:absolute; top:0; left:0; width:100%; height:100%; border:1px solid #dfdfdf; border-radius:10px;}
+.local ul li .box .tt {font-family:'Malgun Gothic'; font-weight:700; font-size:16px; line-height:1.3em; letter-spacing:-0.04em; color:#fd8239; margin-bottom:25px;}
+.local ul li .box p {font-size:18px; line-height:32px; font-weight:700; letter-spacing:-0.04em; color:#2c2c2c;}
+.local ul li .box p.tel {font-size:28px;}
+
+.local ul li.icon1 .box {background-image:url('../images/sub/local_icon1.jpg');}
+.local ul li.icon2 .box {background-image:url('../images/sub/local_icon2.jpg');}
+.local ul li.icon3 .box {background-image:url('../images/sub/local_icon3.jpg');}
+
+.different .title {margin-bottom:50px; border-radius:10px; overflow:hidden; background:#f4f4f4; padding:60px; text-align:center;}
+.different .title .tt {display:inline-block;}
+.different .title .tt .row {display:table; table-layout:fixed; width:100%; max-width:720px;}
+.different .title .tt .row .cell {display:table-cell; vertical-align:middle;}
+.different .title .tt .row .cell-icon {width:180px;}
+.different .title .tt .row .cell-txt {padding-left:30px; text-align:left; font-size:30px; line-height:48px; font-weight:800; color:#2c2c2c; letter-spacing:-0.04em;}
+.different .title .tt .row .cell-txt span {color:#fd8239;}
+.different .title .arrow {margin:19px auto 47px; width:132px; height:102px; background:url('../images/sub/arrow1.png') 0 0 no-repeat; background-size:100% 100%;}
+.different .title .list .row {display:table; table-layout:fixed; width:100%;}
+.different .title .list .cell {display:table-cell; vertical-align:middle;}
+.different .title .list .cell-pic {width:330px; line-height:0;}
+.different .title .list .cell-pic .in {border-radius:10px; overflow:hidden;}
+.different .title .list .cell-txt {padding:0 20px;}
+.different .title .list .cell-txt .inner {width:100%; min-height:260px; border-radius:10px; border:3px solid #ffb825; background:#fff;}
+.different .title .list .cell-txt .inner .logo {padding-top:33px; line-height:0;}
+.different .title .list .cell-txt .inner .tit {padding:8px 0 14px; font-size:16px; line-height:1em; font-weight:700; color:#2c2c2c; letter-spacing:0.2em;}
+.different .title .list .cell-txt .inner p {font-weight:800; font-size:24px; line-height:34px; color:#2c2c2c; letter-spacing:-0.04em;}
+.different .title .list .cell-txt .inner p span {color:#f8821a;}
+.different .txt {text-align:center; margin-bottom:50px;}
+.different .txt p {font-size:20px; line-height:38px; color:#505050; letter-spacing:-0.04em; font-weight:700; margin-bottom:25px;}
+.different .txt p:last-child {margin-bottom:0;}
+.different .txt p span {color:#f8821a;}
+.different .table {}
+.different .table > ul {border-top:3px solid #ffb825; display:table; table-layout:fixed; width:100%;}
+.different .table > ul > li {position:relative; display:table-cell; vertical-align:top; width:33.333333%; border-bottom:1px solid #dfdfdf; text-align:center;}
+.different .table > ul > li:after {content:""; position:absolute; top:0; left:0; width:1px; height:100%; background:#dfdfdf; z-index:1;}
+.different .table > ul > li:first-child:after  {display:none;}
+.different .table > ul > li .tit {position:relative; background:#333; height:64px; font-size:20px; line-height:64px; color:#fff; letter-spacing:-0.04em; font-weight:700; z-index:2;}
+.different .table > ul > li .tit .num {color:#ffb825;}
+.different .table > ul > li .cnt {padding:30px 0;}
+.different .table > ul > li .cnt ul {display:inline-block;}
+.different .table > ul > li .cnt ul li {position:relative; padding-left:15px; text-align:left; font-size:18px; line-height:38px; font-weight:700; color:#2c2c2c; letter-spacing:-0.04em;}
+.different .table > ul > li .cnt ul li:after {content:""; position:absolute; top:15px; left:0; width:6px; height:6px; border-radius:50%; background:#fd8239;}
+
+.service .title {text-align:center; margin-bottom:70px;}
+.service .title .icon {line-height:0; margin-bottom:20px;}
+.service .title h3 {font-size:34px; line-height:54px; font-weight:800; color:#2c2c2c; letter-spacing:-0.04em;}
+.service .title h3 span {color:#fd8239;}
+.service .bg {position:relative; background:#f6f6f6; padding:60px 0; z-index:1;}
+.service .bg .tt {margin-bottom:32px; text-align:center; font-size:34px; line-height:54px; font-weight:800; color:#2c2c2c; letter-spacing:-0.04em;}
+.service .bg .tt span {color:#fd8239;}
+.service .bg .list {margin-bottom:50px;}
+.service .bg .list ul {margin:0 -13px;}
+.service .bg .list ul:after {content:""; display:block; clear:both;}
+.service .bg .list ul li {float:left; width:25%; padding:0 13px;}
+.service .bg .list ul li .tit {display:table; table-layout:fixed; width:100%; height:70px; background:#333; border-radius:10px 10px 0 0;}
+.service .bg .list ul li .tit span {display:table-cell; vertical-align:middle; width:100%; text-align:center; font-size:20px; line-height:26px; font-weight:700; color:#ffb825; letter-spacing:-0.04em;}
+.service .bg .list ul li .txt {display:table; table-layout:fixed; width:100%; height:100px; background:#fff; border-radius:0 0 10px 10px; border:1px solid #dfdfdf; border-top:0;}
+.service .bg .list ul li .txt p {display:table-cell; vertical-align:middle; width:100%; text-align:center; font-family:'Malgun Gothic'; font-size:16px; line-height:26px; color:#505050; letter-spacing:-0.04em;}
+.service .bg .table .row {display:table; table-layout:fixed; width:100%; margin-bottom:40px;}
+.service .bg .table .row:last-child {margin-bottom:0;}
+.service .bg .table .cell {display:table-cell; vertical-align:middle; width:50%;}
+.service .bg .table .cell-tit {padding-left:54px;}
+.service .bg .table .cell-tit .num {float:left; width:40px; height:40px; border-radius:50%; background:#ffb825; text-align:center; font-size:18px; line-height:40px; color:#2c2c2c; letter-spacing:-0.04em; font-weight:800;}
+.service .bg .table .cell-tit p {margin-left:59px; font-size:22px; line-height:40px; color:#2c2c2c; font-weight:700;}
+.service .bg .table .cell-list {border-left:1px solid #ccc; padding-left:20px;}
+.service .bg .table .cell-list ul li {position:relative; padding-left:11px; font-family:'Malgun Gothic'; font-size:16px; line-height:32px; color:#505050; letter-spacing:-0.04em;}
+.service .bg .table .cell-list ul li:after {content:""; position:absolute; top:16px; left:0; width:4px; height:1px; background:#505050;}
+.service .pic {position:relative; margin-top:-11px; line-height:0; z-index:2;}
+
+.checkup .group {margin-bottom:78px;}
+.checkup .group:last-child {margin-bottom:0;}
+.checkup .title {text-align:center; font-size:34px; line-height:54px; font-weight:800; color:#2c2c2c; letter-spacing:-0.04em; margin-bottom:30px;}
+.checkup .title span {color:#fd8239;}
+.checkup .pic {line-height:0;}
+
+.privacy-policy .title {display:table; table-layout:fixed; width:100%; height:300px; border-radius:10px; margin-bottom:45px; background:url('../images/sub/privacy_tt_bg.jpg') 50% 50% no-repeat; background-size:cover; overflow:hidden;}
+.privacy-policy .title .cell {display:table-cell; vertical-align:middle; padding-left:70px;}
+.privacy-policy .title .cell h3 {display:inline-block; text-align:center; font-size:32px; line-height:54px; color:#2c2c2c;}
+.privacy-policy .title .cell h3 span {color:#fd8239;}
+.privacy-policy .txt p {margin-bottom:30px; font-size:18px; line-height:38px; letter-spacing:-0.04em; color:#2c2c2c;}
+.privacy-policy .txt p:last-child {margin-bottom:0;}
+.privacy-policy .txt-box {border:1px solid #dfdfdf; border-radius:10px; padding:35px 40px; font-family:'Malgun Gothic';  font-size:14px; line-height:26px; color:#505050;}
+
+.cost-info .group {margin-bottom:50px;}
+.cost-info .group:last-child {margin-bottom:0;}
+.cost-info .tit {text-align:center; margin-bottom:40px; font-weight:700; font-size:24px; line-height:42px; letter-spacing:-0.04em; color:#2c2c2c;}
+.cost-info .tit span {color:#fd8239;}
+.cost-info .table table {width:100%; border-collapse:collapse; border-spacing:0px; border-top:2px solid #fbbe3f;}
+.cost-info .table table thead th {height:60px; border:1px solid #dfdfdf; background:#f8f8f8; font-size:20px; letter-spacing:-0.04em; color:#2c2c2c;}
+.cost-info .table table thead th:first-child {border-left:0;}
+.cost-info .table table thead th:last-child {border-right:0;}
+.cost-info .table table tbody th {height:60px; border:1px solid #dfdfdf; background:#f8f8f8; font-size:20px; letter-spacing:-0.04em; color:#2c2c2c;}
+.cost-info .table table tbody th:first-child {border-left:0;}
+.cost-info .table table tbody th.f-c1 {color:#fd8239;}
+.cost-info .table table tbody td {padding:15px; border:1px solid #dfdfdf; text-align:center; font-size:18px; line-height:28px; letter-spacing:-0.04em; color:#2c2c2c;}
+.cost-info .table table tbody td.space-left {padding-left:30px;}
+.cost-info .table table tbody td:first-child {border-left:0;}
+.cost-info .table table tbody td:last-child {border-right:0;}
+.cost-info .table table tbody td.f-c1 {color:#fd8239;}
+.cost-info .refer {margin-top:15px; font-family:'Malgun Gothic'; font-size:16px; line-height:1.3em; color:#505050;}
+.cost-info .tit2 {margin-top:50px; text-align:center; font-weight:700; font-size:24px; line-height:42px; letter-spacing:-0.04em; color:#2c2c2c;}
+
+.application-list {margin-top:70px;}
+.application-list .line-box {border:1px solid #dfdfdf; padding:20px; border-radius:10px;}
+.application-list >.doc-cnt > .line-box > .list {padding-left:120px;}
+.application-list >.doc-cnt > .line-box > .list > ul > li {display:table; table-layout:fixed; width:100%; margin-bottom:50px;}
+.application-list >.doc-cnt > .line-box > .list > ul > li .cell {display:table-cell; vertical-align:middle;}
+.application-list >.doc-cnt > .line-box > .list > ul > li .img {width:338px; text-align:center;}
+.application-list >.doc-cnt > .line-box > .list > ul > li .txt {padding-left:95px;}
+.application-list >.doc-cnt > .line-box > .list > ul > li .txt .tt {font-size:24px; line-height:1.3em; font-weight:800; letter-spacing:-0.04em; color:#2c2c2c; margin-bottom:20px;}
+.application-list >.doc-cnt > .line-box > .list > ul > li .txt .tt span {color:#f27197;}
+.application-list >.doc-cnt > .line-box > .list > ul > li .txt p {margin-bottom:25px; font-size:18px; line-height:30px; letter-spacing:-0.04em; color:#2c2c2c;}
+.application-list >.doc-cnt > .line-box > .list > ul > li .txt p img {vertical-align:middle;}
+.application-list >.doc-cnt > .line-box > .list > ul > li .txt p:last-child {margin-bottom:0;}
+.application-list >.doc-cnt > .line-box > .list > ul > li .txt ul li {padding-left:22px; text-indent:-22px; font-size:18px; line-height:30px; letter-spacing:-0.04em; color:#2c2c2c;}
+.application-list >.doc-cnt > .line-box > .list > ul > li .txt ul li strong {color:#f17097;}
+.application-list >.doc-cnt > .line-box > .txt2 {margin-top:35px; text-align:center; font-size:18px; line-height:30px; letter-spacing:-0.04em; color:#2c2c2c;}
+.application-list .txt3 {margin-top:35px; text-align:center; font-size:24px; line-height:34px; font-weight:800; letter-spacing:-0.04em; color:#2c2c2c;}
