@@ -43,7 +43,7 @@
 	<script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="../fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
 	<script type="text/javascript" src="../fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 	<link rel="stylesheet" type="text/css" href="../fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen">
@@ -208,7 +208,7 @@
 			</div>
 			<div class="real-cont">
 				<!--// content -->
-				
+				<form action="">
 				<div class="report-area">
 					<div class="report-htab">
 						<ul>
@@ -219,6 +219,7 @@
 						</ul>
 					</div>	
 					<div class="report-hbox-container">
+						
 						<div class="report-hbox">
 							<div class="report-form">
 								<div class="tit">
@@ -236,37 +237,37 @@
 										<tr>
 											<th scope="row"><label for="v1111">양육자 성명</label></th>
 											<td>
-												<input type="text" name="v1111" id="v1111" class="input" style="width:100%; max-width:180px;">
+												<input type="text" name="v1111" id="v1111" class="input" required="required">
 											</td>
 											<th scope="row"><label for="v1112">아동과의 관계</label></th>
 											<td>
-												<input type="text" name="v1112" id="v1112" class="input" style="width:100%; max-width:180px;">
+												<input type="text" name="v1112" id="v1112" class="input" >
 											</td>
 											
 										</tr>
 										<tr>
 											<th scope="row"><label for="v1121">아동 성명</label></th>
 											<td>
-												<input type="text" name="v1121" id="v1121" class="input" style="width:100%; max-width:180px;">
+												<input type="text" name="v1121" id="v1121" class="input" >
 											</td>
 											<th scope="row"><label for="v1122">생년월일</label></th>
 											<td>
-												<input type="text" name="v1122" id="v1122" class="input datepicker" style="width:100%; max-width:180px;">
+												<input type="text" name="v1122" id="v1122" class="input datepicker" >
 											</td>
 										</tr>
 										<tr>
 											<th scope="row"><label for="v1131">나이</label></th>
 											<td>
-												<input type="number" name="v1131" id="v1131" class="input" style="width:100%; max-width:180px;">
+												<input type="number" name="v1131" id="v1131" class="input number" >
 											</td>
 											<th scope="row"><label for="v1132">성별</label></th>
 											<td>
 												<label class="radio">
-													<input type="radio" name="v1132" value="F">
+													<input type="radio" name="v1132" value="여자">
 													<i></i> 여자
 												</label>
 												<label class="radio">
-													<input type="radio" name="v1132" value="M" >
+													<input type="radio" name="v1132" value="남자" >
 													<i></i> 남자
 												</label>
 											</td>
@@ -274,11 +275,11 @@
 										<tr>
 											<th scope="row"><label for="v1141">관찰일자(1차)</label></th>
 											<td>
-												<input type="text" name="v1141" id="v1141" class="input datepicker" style="width:100%; max-width:180px;">
+												<input type="text" name="v1141" id="v1141" class="input datepicker" >
 											</td>
 											<th scope="row"><label for="v1142">관찰일자(2차)</label></th>
 											<td>
-												<input type="text" name="v1142" id="v1142" class="input datepicker" style="width:100%; max-width:180px;">
+												<input type="text" name="v1142" id="v1142" class="input datepicker" >
 											</td>
 										</tr>
 									</tbody>
@@ -315,37 +316,37 @@
 											<tr>
 												<th scope="row"><label for="v2111">주의산만/과잉행동</label></th>
 												<td>
-													<input type="number" name="v2111" id="v2111" class="input" style="width:100%; max-width:180px;">
+													<input type="number" name="v2111" id="v2111" class="input number">
 												</td>
 												<th scope="row"><label for="v2112">적응이 어려움</label></th>
 												<td>
-													<input type="number" name="v2112" id="v2112" class="input" style="width:100%; max-width:180px;">
+													<input type="number" name="v2112" id="v2112" class="input number">
 												</td>
 											</tr>
 											<tr>
 												<th scope="row"><label for="v2121">보상이 부족함</label></th>
 												<td>
-													<input type="number" name="v2121" id="v2121" class="input" style="width:100%; max-width:180px;">
+													<input type="number" name="v2121" id="v2121" class="input number">
 												</td>
 												<th scope="row"><label for="v2122">요구</label></th>
 												<td>
-													<input type="number" name="v2122" id="v2122" class="input" style="width:100%; max-width:180px;">
+													<input type="number" name="v2122" id="v2122" class="input number">
 												</td>
 											</tr>
 											<tr>
 												<th scope="row"><label for="v2131">기분</label></th>
 												<td>
-													<input type="number" name="v2131" id="v2131" class="input" style="width:100%; max-width:180px;">
+													<input type="number" name="v2131" id="v2131" class="input number">
 												</td>
-												<th scope="row"><label for="v2132">적응이 어려움</label></th>
+												<th scope="row"><label for="v2132">수용</label></th>
 												<td>
-													<input type="number" name="v2132" id="v2132" class="input" style="width:100%; max-width:180px;">
+													<input type="number" name="v2132" id="v2132" class="input number">
 												</td>
 											</tr>
 											<tr>
 												<th scope="row"><label for="v2141">평균</label></th>
 												<td>
-													<input type="number" name="v2141" id="v2141" class="input" style="width:100%; max-width:180px;">
+													<input type="number" name="v2141" id="v2141" class="input number">
 												</td>
 												<th scope="row"><label for="v2142"></label></th>
 												<td>
@@ -380,40 +381,41 @@
 											<tr>
 												<th scope="row"><label for="v2211">유능감 부족</label></th>
 												<td>
-													<input type="number" name="v2211" id="v2211" class="input" style="width:100%; max-width:180px;">
+													<input type="number" name="v2211" id="v2211" class="input number" >
 												</td>
 												<th scope="row"><label for="v2212">고립</label></th>
 												<td>
-													<input type="number" name="v2212" id="v2212" class="input" style="width:100%; max-width:180px;">
+													<input type="number" name="v2212" id="v2212" class="input number" >
 												</td>
 											</tr>
 											<tr>
-												<th scope="row"><label for="v2221">건강하지 못함</label></th>
+												<th scope="row"><label for="v2221">애착</label></th>
 												<td>
-													<input type="number" name="v2221" id="v2221" class="input" style="width:100%; max-width:180px;">
+													<input type="number" name="v2221" id="v2221" class="input number" >
 												</td>
-												<th scope="row"><label for="v2222">역할제한</label></th>
+												<th scope="row"><label for="v2222">건강</label></th>
 												<td>
-													<input type="number" name="v2222" id="v2222" class="input" style="width:100%; max-width:180px;">
-												</td>
-											</tr>
-											<tr>
-												<th scope="row"><label for="v2231">우울</label></th>
-												<td>
-													<input type="number" name="v2231" id="v2231" class="input" style="width:100%; max-width:180px;">
-												</td>
-												<th scope="row"><label for="v2232">양육파트너 관계 비원활</label></th>
-												<td>
-													<input type="number" name="v2232" id="v2232" class="input" style="width:100%; max-width:180px;">
+													<input type="number" name="v2222" id="v2222" class="input number" >
 												</td>
 											</tr>
 											<tr>
-												<th scope="row"><label for="v2241">평균</label></th>
+												<th scope="row"><label for="v2231">역할제한</label></th>
 												<td>
-													<input type="number" name="v2241" id="v2241" class="input" style="width:100%; max-width:180px;">
+													<input type="number" name="v2231" id="v2231" class="input number" >
 												</td>
-												<th scope="row"><label for="v2242"></label></th>
+												<th scope="row"><label for="v2232">우울</label></th>
 												<td>
+													<input type="number" name="v2232" id="v2232" class="input number" >
+												</td>
+											</tr>
+											<tr>
+												<th scope="row"><label for="v2241">양육파트너 관계</label></th>
+												<td>
+													<input type="number" name="v2241" id="v2241" class="input number" >
+												</td>
+												<th scope="row"><label for="v2242">평균</label></th>
+												<td>
+													<input type="number" name="v2242" id="v2242" class="input number" >
 												</td>
 											</tr>
 											<tr>
@@ -445,11 +447,11 @@
 											<tr>
 												<th scope="row"><label for="v2311">총 스트레스</label></th>
 												<td>
-													<input type="text" name="v2311" id="v2311" class="input" style="width:100%; max-width:180px;">
+													<input type="text" name="v2311" id="v2311" class="input number" >
 												</td>
 												<th scope="row"><label for="v2312">생활 스트레스</label></th>
 												<td>
-													<input type="text" name="v2312" id="v2312" class="input" style="width:100%; max-width:180px;">
+													<input type="text" name="v2312" id="v2312" class="input number" >
 												</td>
 											</tr>
 											<tr>
@@ -1678,7 +1680,7 @@
 										</tr>
 										<tr>
 											<td colspan="3">
-												<textarea name="v4131" id="v4131" class="textarea" rows="4" style="width:100%; max-width:610px;"></textarea>
+												<textarea name="v4131" id="v4132" class="textarea" rows="4" style="width:100%; max-width:610px;"></textarea>
 											</td>
 										</tr>
 										<tr>
@@ -1701,10 +1703,29 @@
 						<div class="btn-zone">
 							<input type="button" value="이전" class="btn-pack prev">
 							<input type="button" value="다음" class="btn-pack next">
-							<a href="K-PSI-4_preview.html" class="btn-pack pop-report">미리보기</a>
+							<a href="#" id="preview" class="btn-pack preview">미리보기</a>
+							<!--
+							<a href="K-PSI-4_preview.html" id="preview" class="btn-pack pop-report">미리보기</a>
+							-->
 						</div>
+						
 					</div><!--// report-hbox-container -->
 				</div> <!--// report-area -->
+				<div class="dim-layer">
+					<div class="dim-bg"></div>
+					<div id="report-preview">
+						<div id="report-container"></div>
+						<div class="btn-zone sticky-bottom">
+							<input type="button" value="PDF 생성" class="btn-pack print-pdf">
+							<input type="button" value="닫기" class="btn-pack close">
+
+							<progress id="progressbar" value="0" max="100">생성중</progress>
+
+						</div>
+					</div>
+					
+				</div>
+			</form>
 				<!-- content //-->
 			</div> <!--// real-cont -->
 		</div> <!--// contArea --> 
@@ -1712,9 +1733,6 @@
 	<script type="text/javascript">
 		let hIndex = 0;
 		$(document).ready(function(){
-
-			//
-			
 
 			let $hTabItems = $('.report-htab>ul>li');
 			console.log($hTabItems);
@@ -1727,6 +1745,7 @@
 				$(this).addClass('active');
 
 				hIndex = $hTabItems.index($(this));
+				console.log(hIndex);
 				$('.report-hbox').hide().eq(hIndex).show();
 				
 				$vTabItems.eq((hIndex-1) * 3).trigger("click");
@@ -1749,6 +1768,7 @@
 					$(".report-vbox").niceScroll({cursorborder:"",cursoropacitymin:0.4,cursorcolor:"#ccc",boxzoom:false});
 					//$(".report-hbox").niceScroll().remove();
 				}
+				setAnchor(hIndex, 0);
 			});
 
 			$hTabItems.eq(0).trigger("click");
@@ -1760,7 +1780,9 @@
 				let index = $vTabItems.index($(this));
 				$('.report-vbox').hide().eq(index).show();
 
-				
+
+				setAnchor(hIndex, index);
+
 			});
 
 			console.log($('.next'))
@@ -1772,10 +1794,27 @@
 				$hTabItems.eq(hIndex - 1).trigger("click");	
 			});
 
+			$('.preview').click(function(){
+				$("form").validate();
+				previewPopup();
+				previewReport();
+				initProgress();	
+			});
+			$('.dim-layer .dim-bg').click(function(){
+				$('.dim-layer').fadeOut();
+				return false;
+			});
+
+			$('.close').click(function(){
+				$('.dim-layer').fadeOut();
+				return false;	
+			});
+			//$("#preview").attr("href","K-PSI-4_preview.html");
+
 			//$vTabItems.eq(hIndex * 3).trigger("click");
 
 			$(".datepicker").datepicker({
-                dateFormat: 'yy-mm-dd' //Input Display Format 변경
+                dateFormat: 'yy년 mm월 dd일' //Input Display Format 변경
                 ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
                 ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
                 ,changeYear: true //콤보박스에서 년 선택 가능
@@ -1789,13 +1828,13 @@
                 ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
                 ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
                 ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
-                ,minDate: "-1M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+                ,minDate: "-10Y" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
                 ,maxDate: "+1M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
             });                    
             
             //초기값을 오늘 날짜로 설정
             $('.datepicker').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)            
-
+/*
 			$(".pop-report").fancybox({
 				padding     : 0,
 				margin      : 0,
@@ -1817,11 +1856,59 @@
 			});
 
 			$(".pop_report").click(function() {
+				console.log($(this));
 				$(".pop_report").niceScroll({cursorborder:"",cursoropacitymin:0.4,cursorcolor:"#ccc",boxzoom:false});
 			});
+*/			
 			//var temp = $(':radio[name="v3111"]:checked').val();
 			//console.log(temp);
 		});
+
+		function setAnchor(hIndex, vIndex) {
+			console.log(hIndex + ":" + vIndex);
+			if (hIndex == 0) {
+				$("#preview").attr("href","#cover");
+			} else if (hIndex == 1) {
+				if (vIndex == 0) {
+					$("#preview").attr("href","#report-part21");
+				} else if (vIndex == 1) {
+					$("#preview").attr("href","#report-part22");
+				} else if (vIndex == 2) {
+					$("#preview").attr("href","#report-part23");
+				}
+			} else if (hIndex == 2) {
+				if (vIndex == 3) {
+					$("#preview").attr("href","#report-part4");
+				} else if (vIndex == 4) {
+					$("#preview").attr("href","#report-part5");
+				} else if (vIndex == 5) {
+					$("#preview").attr("href","#report-part7");
+				}
+			} else {
+				$("#preview").attr("href","#report-part9");
+			}
+			
+		}
+
+		function previewPopup() {
+			let $el = $("#report-preview");
+
+			$('.dim-layer').fadeIn();
+
+			let $elWidth = ~~($el.outerWidth()),
+				$elHeight = ~~($el.outerHeight()),
+				docWidth = $(document).width(),
+				docHeight = $(document).height();
+
+			if ($elHeight < docHeight || $elWidth < docWidth) {
+				$el.css({
+					marginTop: -$elHeight / 2,
+					marginLeft: -$elWidth / 2
+				});
+			} else {
+				$el.css({top: 0, left: 0});
+			}	
+		}
 	</script>
 	<hr>
 
@@ -1853,5 +1940,10 @@
     <!-- footer //-->
 
 </div>
+<script type="text/javascript" src="K-PSI-4.js"></script>
+<script type="text/javascript" src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
 </body>
 </html>

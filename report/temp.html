@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<!--
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes, target-densitydpi=medium-dpimax">
+-->
+	<meta name="viewport" content="initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="naver-site-verification" content="e337abe5024830e21b99ef482128fab95a7e4e0f"/>	<meta name="google-site-verification" content="BiqfgtpFVjo10z9G9L2XD-hzesB28Protv2u-WNgHQY" />	<meta name="subject" content="닥터앤맘">
+	<meta name="description" content="untact시대 우리 아이들을 비대면 홈 카메라를 이용하여 편안하게 관찰하고 아이들의 심리변화를 알려드립니다.">
+	<meta name="keywords" content="비대면아동심리상담,아동상담,비대면상담,홈캠상담,소아심리상담,비대면상담,상담사소개">
+    <title>닥터앤맘</title>
+	<link type='text/css' rel='stylesheet' href='http://fonts.googleapis.com/earlyaccess/notosanskr.css'>
+	<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+	<link href='https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="../css/report.css">
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> 
+	<script type="text/javascript" src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+	<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<!--	<script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+-->
+	<script type="text/javascript" src="../fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+	<script type="text/javascript" src="../fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+	<link rel="stylesheet" type="text/css" href="../fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen">
+
+	<script type="text/javascript" src="K-PSI-4.js"></script>
+	<style>
+		/* 에스코어드림Md */
+		@font-face {
+			font-family: 'S-CoreDream-5Medium';
+			src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+		}
+		/* 넥슨 Lv.2 고딕 Regular */
+		@font-face {
+			font-family: 'NEXON Lv2 Gothic';
+			src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+		}
+		/* 넥슨 Lv.2 고딕 Bold */
+		@font-face {
+			font-family: 'NEXON Lv2 Gothic Bold';
+			src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic Bold.woff') format('woff');
+			font-weight: normal;
+			font-style: normal;
+		}
+	</style>
+
+	<script type="text/javascript">
+	jQuery(document).ready(function(){
+
+		//console.log(parent.$(':radio[name="v3211"]:checked').val());
+		//console.log(parent.$('#v1111').val());
+	}); //End
+	</script>
+</head>
+<body id="sub" class="sub login-body">
+
+	<div id="wrapper">
+		<div id="report-cover">
+			<div class="page-container">
+				<div class="page">
+					<div class="cover">
+
+					</div>
+				</div>  
+			</div>  
+		</div>
+		<div id="report-part1">
+			<div class="page-container">
+				<div class="page">
+					<div class="top"></div>
+					<div class="middle">
+						<div class="content">
+							<div class="title"><img src="../images/report/no1.jpg" /><span>홍길동 엄마의 양육스트레스</span></div>
+							<div class="subtitle"><span>검사소개</span></div>
+							<img src="../images/report/1_1.jpg" >
+							<div class="desc round-all h250">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+							<img class="img-1-2" src="../images/report/1_2.jpg" >
+						</div>
+					</div>
+					<div class="bottom"></div>
+				</div>  
+			</div> 
+		</div>
+		<div id="report-part2-1"> 
+			<div class="page-container">
+				<div class="page">
+					<div class="top"></div>
+					<div class="middle">
+						<div class="content">
+							<div class="title"><img src="../images/report/no2.jpg" /><span>STRESS(1)</span></div>
+							<div class="subtitle"><span>자녀의 스트레스 영역</span></div>
+							<div class="chart">
+								<canvas id="child_stress_chart" style="width:100%;max-width:600px"></canvas>
+							</div>
+							<div id="child_stres_table" class="table"></div>
+							<div class="desc round-all h200 mt40">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+						</div>
+					</div>
+					<div class="bottom"></div>
+				</div>  
+			</div>  
+		</div>
+		<div id="report-part2-2">
+			<div class="page-container">
+				<div class="page">
+					<div class="top"></div>
+					<div class="middle">
+						<div class="content">
+							<div class="title"><img src="../images/report/no2.jpg" /><span>STRESS(2)</span></div>
+							<div class="subtitle"><span>양육자의 스트레스 영역</span></div>
+							<div class="chart">
+								<canvas id="fosterer_stress_chart" style="width:100%;max-width:600px"></canvas>
+							</div>
+							<div id="fosterer_stres_table" class="table"></div>
+							<div class="desc round-all h200 mt40">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+						</div>
+					</div>
+					<div class="bottom"></div>
+				</div>  
+			</div>  
+		</div>
+		<div id="report-part2-3">
+			<div class="page-container">
+				<div class="page">
+					<div class="top"></div>
+					<div class="middle">
+						<div class="content">
+							<div class="title"><img src="../images/report/no2.jpg" /><span>STRESS(3)</span></div>
+							<div class="subtitle"><span>생활 스트레스 영역</span></div>
+							<div class="chart">
+								<canvas id="life_stress_chart" style="width:100%;max-width:600px"></canvas>
+							</div>
+							<div id="life_stres_table" class="table"></div>
+							<div class="desc round-all h200 mt40">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+						</div>
+					</div>
+					<div class="bottom"></div>
+				</div>  
+			</div>  
+		</div>
+		<div id="report-part3"> 
+			<div class="page-container">
+				<div class="page">
+					<div class="top"></div>
+					<div class="middle">
+						<div class="content">
+							<div class="title"><img src="../images/report/no3.jpg" /><span>아이와 보호자 의 상호작용 관찰 평가, 분석</span></div>
+							<div class="subtitle"><span>아동에게 놀이는 정말 중요할까요?</span></div>
+							<img class="img-3-1" src="../images/report/3_1.jpg" >
+							<div class="subtitle"><span>왜 자유놀이 상황을 통해 상호작용관찰을 할까요?</span></div>
+							<img class="img-3-2" src="../images/report/3_2.jpg" >
+							<img class="img-3-3" src="../images/report/3_3.jpg" >
+						</div>
+					</div>
+					<div class="bottom"></div>
+				</div>  
+			</div>  
+		</div>
+		<div id="report-part4">
+			<div class="page-container">
+				<div class="page">
+					<div class="top"></div>
+					<div class="middle">
+						<div class="content">
+							<div class="title"><img src="../images/report/no4.jpg" /><span>아이의 행동 관찰로 본 전반적인 발달상태</span></div>
+							<img class="img-4-1" src="../images/report/4_1.jpg" > <!--TODO DIV background로 변경해야함-->
+							<div class="group"><span>1회차</span></div><span>2021년 8월 11일</span>
+							<div class="desc round-right-bottom h200 mb20">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+							<div class="group"><span>2회차</span></div><span>2021년 8월 21일</span>
+							<div class="desc round-right-bottom h200">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+						</div>
+					</div>
+					<div class="bottom"></div>
+				</div>  
+			</div>  
+		</div>
+		<div id="report-part5">
+			<!--
+			<div class="page-container">
+				<div class="page">
+					<div class="top"></div>
+					<div class="middle">
+						<div class="content">
+							<div class="title no5"><span>홍길동의 상호작용 관찰 분석</span></div>
+							<div class="group"><span>주도성</span></div>
+							<div class="item round"><span>1. 스스로 놀이감을 선택한다.</span></div>
+							<div class="desc">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+							<div class="item"><span>2. 스스로 놀이를 전개한다.</span></div>
+							<div class="desc round-bottom">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+						</div>
+					</div>
+					<div class="bottom"></div>
+				</div>  
+			</div>  
+			-->
+		</div>
+		<div id="report-part6">
+			<div class="page-container">
+				<div class="page">
+					<div class="top"></div>
+					<div class="middle">
+						<div class="content">
+							<div class="title"><img src="../images/report/no6.jpg" /><span>아이 분석</span></div>
+							
+							<div class="subtitle"><span>홍길동 아이의 강점</span></div>
+							<div class="desc round-all h150 mb20">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+							<div class="subtitle"><span>홍길동 아이의 약점</span></div>
+							<div class="desc round-all h150 mb20">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+							<div class="subtitle"><span>BJW-TIP (양육스트레스와 연결해 생각해보세요)</span></div>
+							<div class="desc round-all h150 mb20">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+						</div>
+					</div>
+					<div class="bottom"></div>
+				</div>  
+			</div>  
+		</div>
+		<div id="report-part7">
+			<div class="page-container">
+				<div class="page">
+					<div class="top"></div>
+					<div class="middle">
+						<div class="content">
+							<div class="title"><img src="../images/report/no7.jpg" /><span>홍길동 엄마의 상호작용 관찰 분석</span></div>
+							<div class="group"><span>주도성</span></div>
+							<div class="item round"><span>1.아동이 놀잇감을 선택하도록 기회를 제공한다.</span></div>
+							<div class="desc">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+							<div class="item"><span>2. 놀이가 전개되도록 돕는다.</span></div>
+							<div class="desc round-bottom">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+						</div>
+					</div>
+					<div class="bottom"></div>
+				</div>  
+			</div>  
+		</div>
+		<div id="report-part8">
+			<div class="page-container">
+				<div class="page">
+					<div class="top"></div>
+					<div class="middle">
+						<div class="content">
+							<div class="title"><img src="../images/report/no8.jpg" /><span>홍길동 엄마의 분석</span></div>
+							<div class="subtitle"><span>홍길동 엄마의 강점</span></div>
+							<div class="desc round-all h150 mb20">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+							<div class="subtitle"><span>홍길동 엄마의 약점</span></div>
+							<div class="desc round-all h150 mb20">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+							<div class="subtitle"><span>BJW-TIP (양육스트레스와 연결해 생각해보세요)</span></div>
+							<div class="desc round-all h150 mb20">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+						</div>
+					</div>
+					<div class="bottom"></div>
+				</div>  
+			</div>  
+		</div>
+		<div id="report-part9">
+			<div class="page-container">
+				<div class="page">
+					<div class="top"></div>
+					<div class="middle">
+						<div class="content">
+							<div class="title"><img src="../images/report/no9.jpg" /><span>아이와 엄마를 위한 맞춤 솔루션</span></div>
+							<img class="img-9-1" src="../images/report/9_1.jpg" >
+							<div class="desc round-all h200 mb20">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+							<div class="desc round-all h200 mb20">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+							<div class="desc round-all h200 mb20">
+								닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다
+							</div>
+						</div>
+					</div>
+					<div class="bottom"></div>
+				</div>  
+			</div>  
+		</div>	
+		<div class="btn-zone sticky-bottom">
+			<input type="button" value="PDF 생성" class="btn-pack print-pdf">
+		</div>
+	</div>
+	<script>
+		$(document).ready(function() {
+			$('.print-pdf').click(async function(){
+				$.fancybox.showLoading();
+				$.fancybox.helpers.overlay.open({parent: $('body'), closeClick : false});
+				console.log("start");
+				await HTML2PDF();	
+				console.log("end");
+				$.fancybox.hideLoading();
+				$.fancybox.helpers.overlay.close();
+			});
+
+			
+			reportCover();
+			reportPart1();
+			reportPart2();
+			reportPart3();
+			reportPart4();
+			reportPart5();
+			reportPart6();
+			reportPart7();
+			reportPart8();
+			reportPart9();
+
+			
+		});
+
+	
+
+		function reportCover() {
+
+		}
+
+		function reportPart1() {
+			
+		}
+
+		function reportPart2() {
+			childSress();
+			fostererSress();
+			lifeSress();
+		}
+		function reportPart3() {
+			
+		}
+		function reportPart4() {
+			
+		}
+		function reportPart5() {
+			//자녀의 상호작용 관찰 분석
+			interaction(data32, 5);
+		}
+		function reportPart6() {
+			
+		}
+		function reportPart7() {
+			interaction(data33, 7);
+		}
+		function reportPart8() {
+			
+		}
+		function reportPart9() {
+			
+		}
+
+		function interaction(data, partNo) {
+			//자녀의 상호작용 관찰 분석
+			//console.log(data32)
+			let no = 1;
+			$reportPart = 	$('#report-part' + partNo);
+
+			let $pageContainert;
+			let $page;
+			let $top;
+			let $middle;
+			let $bottom;
+			let $content;
+
+			let $title;
+			let $group;
+			let $item;
+			let $desc;
+			let groupNo = 1;
+
+			data.forEach(data => {
+				//console.log(data);
+				groupNo = 1;
+				for (const [groupKey, group] of Object.entries(data)) {
+					//console.log(`${groupKey}`); //주도성
+					
+					group.forEach(groupItems => {
+						//console.log(items);
+
+						if ((groupNo % 2) == 1) {
+							//페이지 추가
+							$pageContainert = $('<div class="page-container"></div>');
+							$page = $('<div class="page"></div>');
+							$top = $('<div class="top"></div>');
+							$middle = $('<div class="middle"></div>');
+							$bottom = $('<div class="bottom"></div>');
+							$content = $('<div class="content"></div>');
+						} 
+
+						for (const [key, items] of Object.entries(groupItems)) {
+							//console.log(`${key} 0 -> ${items[0]}`); 
+							//console.log(`${key} 1 -> ${items[1]}`); 
+							//console.log(`${key} 2 -> ${items[2]}`); 
+							//console.log((groupNo % 2))
+							if ((groupNo % 2) == 1) {
+								$title = $(`<div class="title"><img src="../images/report/no${partNo}.jpg" /><span>홍길동의 상호작용 관찰 분석</span></div>`);
+								$group = $(`<div class="group"><span>${groupKey}</span></div>`);
+								$item = $(`<div class="item round"><span>${no++}. ${items[0]}</span></div>`);
+								$desc = $(`<div class="desc">${items[1].replace("☞", "<br/><br/>☞")}</div>`)
+
+								$content.append($title);
+								$content.append($group);
+								$content.append($item);
+								$content.append($desc);
+
+							} else {
+								$item = $(`<div class="item"><span>${no++}. ${items[0]}</span></div>`);
+								$desc = $(`<div class="desc round-bottom">${items[1].replace("☞", "<br/><br/>☞")}</div>`)
+								$content.append($item);
+								$content.append($desc);
+							}
+							//항목추가
+							
+							//
+						} //for
+						groupNo++;
+						if ( (groupNo % 2) == 0) {
+						$page.append($top);
+						$page.append($middle);
+						$middle.append($content);
+						$page.append($bottom);
+						$pageContainert.append($page);
+						$reportPart.append($pageContainert);
+					}
+						
+					}); //forEach
+					if ( (groupNo % 2) == 0) {
+						$page.append($top);
+						$page.append($middle);
+						$middle.append($content);
+						$page.append($bottom);
+						$pageContainert.append($page);
+						$reportPart.append($pageContainert);
+					}
+				} //for
+			}); // group
+		}
+
+		function childSress() {
+			let labels = ["주의산만/과잉행동", "적응이 어려움", "보상이 부족함", "요구", "기분", "수용", "평균"];
+			let descs = ["주의력 결핍/과잉행동장애 증상을 반영하는 자녀의 행동적 특성", 
+						"사회적이거나 물리적 환경 변화에 적응하는 자녀의 능력", 
+						"부모가 자녀와의 상호작용으로 긍정적인 경험을 하게 되는 정도", 
+						"자녀가 요구하는 것에 대한 부모의 경험", 
+						"자녀의 정서적 상태", 
+						"부모의 기대에 부응하는 자녀 특성의 정도", 
+						""];
+			let datas = [80, 90, 75, 88, 87, 78, 83];
+			let colors = ["#F2A148", "#F2A148","#F2A148","#F2A148","#F2A148", "#F2A148", "#F2A148"];
+			//append bar  chart
+			new Chart("child_stress_chart", {
+				type: "horizontalBar",
+				data: {
+					labels: labels,
+					datasets: [{
+					backgroundColor: colors,
+					data: datas
+					}]
+				},
+				options: {
+					legend: {display: false},
+					title: {display: false,	text: "Child Stress"},
+					scales: {
+						yAxes: [{
+								display: true,
+								ticks: {
+									fontSize : 14,
+								}
+							}],
+						xAxes: [{
+								display: true,
+								ticks: {
+									beginAtZero: true,
+									steps: 10,
+									stepValue: 5,
+									max: 100,
+									fontSize : 14,
+								}
+							}]
+					}
+				}
+			});
+
+			//append table
+			let $Table = $('<table/>');
+			$Table.append('<colgroup><col width="18%"/><col width="8%"/><col width="64%"/><col width="10%"/></colgroup>');
+			$Table.append('<tbody>');
+			$Table.append('<tr><th>항목</th><th nowrap>표준점수</th><th>설명</th><th>단계</th></tr>');
+			let i;
+			for(i = 0 ;i < labels.length - 1; i++) {
+				$Table.append('<tr><td>' + labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
+			}
+			$Table.append('<tr class="avg"><td>' + labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
+
+			$Table.append('</tbody>');
+			$('#child_stres_table').append($Table);
+		}
+
+		function fostererSress() {
+			let labels = ["유능감", "고립", "애착", "건강", "역할제한", "우울", "양육파트너 관계", "평균"];
+			let descs = ["부모 역할에 대한 능력감과 얼마나 편안하게 느끼고 있는지 정도", 
+						"사회적 지지정도", 
+						"친밀도를 느끼는 정도 및 자녀의 요구를 잘 관찰하고 반응할 수 있는 능력", 
+						"전반적인 양육 스트레스에 영향을 미칠 수 있는 부모의 건강정도", 
+						"부모 역할의 결과로 나타나는 자유의 제한 및 개인 정체성의 제약에 대한 지각", 
+						"부모의 정서적인 상태", 
+						"양육파트너로부터 받는 정서적 및 물리적 지지에 대한 부모의 지각",
+						""];
+			let datas = [90, 87, 88, 78, 88, 65, 87, 83.3];
+			let colors = ["#F2A148", "#F2A148","#F2A148","#F2A148","#F2A148", "#F2A148", "#F2A148", "#F2A148"];
+			//append bar  chart
+			new Chart("fosterer_stress_chart", {
+				type: "horizontalBar",
+				data: {
+					labels: labels,
+					datasets: [{
+					backgroundColor: colors,
+					data: datas
+					}]
+				},
+				options: {
+					legend: {display: false},
+					title: {display: false,	text: "fosterer Stress"},
+					scales: {
+						yAxes: [{
+								display: true,
+								ticks: {
+									fontSize : 14,
+								}
+							}],
+						xAxes: [{
+								display: true,
+								ticks: {
+									beginAtZero: true,
+									steps: 10,
+									stepValue: 5,
+									max: 100,
+									fontSize : 14,
+								}
+							}]
+					}
+				}
+			});
+
+			//append table
+			var $Table = $('<table/>');
+			$Table.append('<colgroup><col width="18%"/><col width="8%"/><col width="64%"/><col width="10%"/></colgroup>');
+			$Table.append('<tbody>');
+			$Table.append('<tr><th>항목</th><th nowrap>표준점수</th><th>설명</th><th>단계</th></tr>');
+			let i;
+			for(i = 0 ;i < labels.length - 1; i++) {
+				$Table.append('<tr><td>' + labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
+			}
+			$Table.append('<tr class="avg"><td>' + labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
+
+			$Table.append('</tbody>');
+			$('#fosterer_stres_table').append($Table);
+		}
+
+		function lifeSress() {
+			var labels = ["총 스트레스", "생활 스트레스"];
+			var descs = ["자녀영역 및 부모영역 스트레스 총합", 
+						"부모가 현재 겪고 있는 부모·자녀관계 이외의 스트레스 양"
+						];
+			var datas = [77, 87];
+			var colors = ["#F2A148", "#F2A148"];
+			//append bar  chart
+			new Chart("life_stress_chart", {
+				type: "horizontalBar",
+				data: {
+					labels: labels,
+					datasets: [{
+					backgroundColor: colors,
+					data: datas
+					}]
+				},
+				options: {
+					legend: {display: false},
+					title: {display: false,	text: "life Stress"},
+					scales: {
+						yAxes: [{
+								display: true,
+								ticks: {
+									fontSize : 14,
+								}
+							}],
+						xAxes: [{
+								display: true,
+								ticks: {
+									beginAtZero: true,
+									steps: 10,
+									stepValue: 5,
+									max: 100,
+									fontSize : 14,
+								}
+							}]
+					}
+				}
+			});
+
+			//append table
+			var $Table = $('<table/>');
+			$Table.append('<colgroup><col width="18%"/><col width="8%"/><col width="64%"/><col width="10%"/></colgroup>');
+			$Table.append('<tbody>');
+			$Table.append('<tr><th>항목</th><th nowrap>표준점수</th><th>설명</th><th>단계</th></tr>');
+			let i;
+			for(i = 0 ;i < labels.length; i++) {
+				$Table.append('<tr><td>' + labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
+			}
+			$Table.append('</tbody>');
+			$('#life_stres_table').append($Table);
+		}
+
+		function getGrade(score){
+			if (score >= 90) return '매우높음';
+			if (score >= 85) return '높음';
+			if (score >= 70) return '보통';
+			if (score >= 60) return '낮음';
+			return '매우낮음';
+		};
+		
+		async function HTML2PDF() {
+			window.jsPDF = window.jspdf.jsPDF;
+			//let doc = new jsPDF('p', 'mm', 'a4'); //jspdf객체 생성
+			let doc = new jsPDF('p', 'pt', 'a4'); //jspdf객체 생성
+			let $el = $('.page');
+			for (let i = 0;i < $el.length; i++) {
+				await html2canvas($el[i],{
+					allowTaint: true,
+				}).then(function(canvas) {
+					let imgData = canvas.toDataURL('image/png'); //캔버스를 이미지로 변환
+					if (i > 0) doc.addPage();
+					doc.addImage(imgData, 'PNG', 0, 0, 595.28, 841.89); //이미지를 기반으로 pdf생성
+					
+				});
+
+			}
+			// let img = new Image();
+			// img.src = '../images/report/cover.jpg'
+			// doc.addPage();
+			// doc.addImage(img, 'JPG', 0, 0, 595.28, 841.89);
+			doc.save('sample-file.pdf'); //pdf저장
+		}
+
+	
+	</script>
+</body>
+</html>
