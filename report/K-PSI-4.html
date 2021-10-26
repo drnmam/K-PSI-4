@@ -1795,7 +1795,14 @@
 			});
 
 			$('.preview').click(function(){
-				$("form").validate();
+				console.log($('form'))
+
+				var validator = $("form").validate({
+					invalidHandler: function() {
+						console.log( validator.numberOfInvalids() + " field(s) are invalid" );
+					}
+				});
+
 				previewPopup();
 				previewReport();
 				initProgress();	
