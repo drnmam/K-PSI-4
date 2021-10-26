@@ -32,7 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+<!---->
 	<script type="text/javascript" src="../js/jquery-1.11.1.min.js"></script>
+
 	<script type="text/javascript" src="../js/jquery.easing.js"></script>
 	<script type="text/javascript" src="../js/jquery.gnb.js"></script>
 	<script type="text/javascript" src="../js/slick.js"></script>
@@ -42,8 +44,11 @@
 	<script type="text/javascript" src="../js/placeholder.js"></script>
 	<script type="text/javascript" src="../js/jquery.nicescroll.min.js"></script>
 	<script type="text/javascript" src="../js/jquery.js"></script>
+	<!--
+	<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+	-->
 	<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
 	<script type="text/javascript" src="../fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
 	<script type="text/javascript" src="../fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 	<link rel="stylesheet" type="text/css" href="../fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen">
@@ -1795,17 +1800,10 @@
 			});
 
 			$('.preview').click(function(){
-				console.log($('form'))
+				
+				$("form").submit();
 
-				var validator = $("form").validate({
-					invalidHandler: function() {
-						console.log( validator.numberOfInvalids() + " field(s) are invalid" );
-					}
-				});
-
-				previewPopup();
-				previewReport();
-				initProgress();	
+			
 			});
 			$('.dim-layer .dim-bg').click(function(){
 				$('.dim-layer').fadeOut();
@@ -1869,6 +1867,20 @@
 */			
 			//var temp = $(':radio[name="v3111"]:checked').val();
 			//console.log(temp);
+
+			console.log($('form'))
+
+			var validator = $("form").validate({
+				invalidHandler: function() {
+					console.log( validator.numberOfInvalids() + " field(s) are invalid" );
+					if (validator.numberOfInvalids() > 0) {
+						if(confirm(`입력하지 않은 필드 ${validator.numberOfInvalids()}"가 있습니다. 입력전에  미리보기를 하시겠습니ㄷ까?`)) {
+							preview();
+						}
+					}
+				}
+			});
+			console.log(validator);
 		});
 
 		function setAnchor(hIndex, vIndex) {
@@ -1915,6 +1927,12 @@
 			} else {
 				$el.css({top: 0, left: 0});
 			}	
+		}
+
+		function preview() {
+			previewPopup();
+			previewReport();
+			initProgress();	
 		}
 	</script>
 	<hr>
