@@ -79,6 +79,8 @@ body		{ padding:0;margin:0;font-family: 'NanumSquare', sans-serif; transform: no
 
 input.input {width:100%; max-width:180px;}
 input.number {text-align:center}
+label.error {background-color: red;}
+input.error, textarea.error {border:1px solid red}
 
 
 /*미리보기*/
