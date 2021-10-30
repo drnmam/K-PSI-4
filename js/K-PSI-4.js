@@ -1,5 +1,5 @@
 const data21 = {
-    "keys":["v2111", "v2112", "v2113", "v2114", "v2115", "v2116", "v2117"],
+    "keys":["v2111", "v2112", "v2121", "v2122", "v2131", "v2132", "v2141"],
     "labels" : ["주의산만/과잉행동", "적응이 어려움", "보상이 부족함", "요구", "기분", "수용", "평균"],
     "descs" : ["주의력 결핍/과잉행동장애 증상을 반영하는 자녀의 행동적 특성", 
                 "사회적이거나 물리적 환경 변화에 적응하는 자녀의 능력", 
@@ -12,7 +12,7 @@ const data21 = {
 }
 
 const data22 = {
-    "keys":["v2211", "v2212", "v2213", "v2214", "v2215", "v2216", "v2217", "v2218"],
+    "keys":["v2211", "v2212", "v2221", "v2222", "v2231", "v2232", "v2241", "v2242"],
     "labels" : ["유능감", "고립", "애착", "건강", "역할제한", "우울", "양육파트너 관계", "평균"],
     "descs" :  ["부모 역할에 대한 능력감과 얼마나 편안하게 느끼고 있는지 정도", 
                 "사회적 지지정도", 
@@ -23,6 +23,13 @@ const data22 = {
                 "양육파트너로부터 받는 정서적 및 물리적 지지에 대한 부모의 지각",
                 ""],
     "colors" : ["#F2A148", "#F2A148","#F2A148","#F2A148","#F2A148", "#F2A148", "#F2A148", "#F2A148"]
+}
+
+const data23 = {
+    "keys":["v2311", "v2312"],
+    "labels" :  ["총 스트레스", "생활 스트레스"],
+    "descs" :   ["자녀영역 및 부모영역 스트레스 총합",  "부모가 현재 겪고 있는 부모·자녀관계 이외의 스트레스 양"],
+    "colors" : ["#F2A148", "#F2A148"]
 }
 
 const data32 = [
@@ -560,49 +567,83 @@ const data33 = [
 ];
 //--------------------------------------------------------------------------------------------------------------------------------------------
 
-function interaction_form(data, tbody) {
-    //자녀의 상호작용 관찰 분석
-    //console.log(data32)
-    let no = 1;
-    // $reportPart = 	$('#report-part' + partNo);
+function interactionForm(data, tbodyId) {
 
-    // let $pageContainert;
-    // let $page;
-    // let $top;
-    // let $middle;
-    // let $bottom;
-    // let $content;
+    $tBody = $(`#${tbodyId}`);
 
-    let $title;
-    let $group;
-    let $item;
-    let $desc;
-    let groupNo = 1;
-    let score;
-    let desc;
-    $tBody = 	$(`#${tbody}`);
-
-   
-
+    let $groupTR, $groupTH, $groupItemTH, $groupItemTD  ;
+    let $groupKey = "";
     data.forEach(data => {
         //console.log(data);
-        groupNo = 1;
         for (const [groupKey, group] of Object.entries(data)) {
             console.log(`${groupKey} ${group.length}`); //주도성
-            
+
             group.forEach(groupItems => {
-                console.log(groupItems);
-
+     
+                // console.log(groupItems);
+                console.log(Object.keys(groupItems)[0]);
+                console.log(Object.values(groupItems)[0][0]);
                 
+                $groupTR = $(`<tr></tr>`);
 
-               
-               
+                if ($groupKey != groupKey) {
+                    $groupTH = $(`<th scope="row" rowspan="${group.length}">${groupKey}</th>`);
+                    $groupTR.append($groupTH);
+
+                    $groupKey = groupKey;
+                }
+
+                $groupItemTH = $(`<th scope="row" class="left">${Object.values(groupItems)[0][0]}</th>`);
+                $groupItemTD = answerForm(Object.keys(groupItems)[0]);
                 
+                $groupTR.append($groupItemTH);
+                $groupTR.append($groupItemTD);
+                $tBody.append($groupTR);
             }); //forEach
-
-           
         } //for
     }); // group
+
+    console.log($tBody);
+}
+
+function answerForm(key) {
+    let $td = $(`<td></td>`);
+    let $radio1 = $(`<input type="radio" name="${key}" id="${key}-1" value="0" required><label style="margin-right:5px" for="${key}-1"><i></i> 미약</label>`);
+    let $radio2 = $(`<input type="radio" name="${key}" id="${key}-2" value="1" required><label style="margin-right:5px" for="${key}-2"><i></i> 보통</label>`);
+    let $radio3 = $(`<input type="radio" name="${key}" id="${key}-3" value="2" required><label style="margin-right:5px" for="${key}-3"><i></i> 양호</label>`);
+    let $radio4 = $(`<input type="radio" name="${key}" id="${key}-4" value="3" required><label for="${key}-4"><i></i> 최적</label>`);
+    $td.append($radio1); $td.append($radio2); $td.append($radio3); $td.append($radio4);
+    return $td;
+}
+
+  
+function stressForm(data, tbodyId) {
+  debugger;  
+    $tBody = $(`#${tbodyId}`);
+   
+    let $tr, td1, td2;
+    let i = 0;
+    for (;i < data.keys.length; i+=2) {
+        $tr = $(`<tr></tr>`);
+        $td1 = $(`<th scope="row"><label for="${data.keys[i]}">${data.labels[i]}</label></th>`);
+		$td2 = $(`<td><input type="number" name="${data.keys[i]}" id="${data.keys[i]}" class="input number" min="0" max="100" required></td>`);
+        $tr.append($td1);
+        $tr.append($td2);
+        if (i + 1 <  data.keys.length) {
+            $td1 = $(`<th scope="row"><label for="${data.keys[i+1]}">${data.labels[i+1]}</label></th>`);
+		    $td2 = $(`<td><input type="number" name="${data.keys[i+1]}" id="${data.keys[i+1]}" class="input number" min="0" max="100"  required></td>`);
+        } else {
+            $td1 = $(`<th scope="row"></th>`);
+            $td2 = $(`<td></td>`);
+        }
+        $tr.append($td1);
+        $tr.append($td2);
+
+        $tBody.append($tr);
+    }
+   
+
+   
 }
 //--------------------------------------------------------------------------------------------------------------------------------------------
 let $reportContainer = $("#report-container");
@@ -639,6 +680,7 @@ $(document).ready(function() {
 });
 
 function previewReport() {
+    $nPage = 1;
     //$data.title = $nPage;
     $reportContainer.empty();
     $('.report-processing-table').hide();
@@ -670,7 +712,7 @@ function makePageContainer(pageNo) {
     $top = $('<div class="top"></div>')
     $middle = $('<div class="middle"></div>')
     $content = $('<div class="content"></div>')
-    $bottom = $(`<div class="bottom"><span class="page-no">${pageNo}</span></div>`)
+    $bottom = $(`<div class="bottom"><span class="page-no"> - ${pageNo} - </span></div>`)
 }
 function makePageContent() {
     $page.append($top);
@@ -742,12 +784,12 @@ function reportPart21() {
     $content.append($(`<div class="title"><img src="./images/report/no2.png" /><span>STRESS(1)</span></div>`));
     $content.append($(`<div class="subtitle"><span>자녀의 스트레스 영역</span></div>`));
     $content.append($(`<div class="chart"><canvas id="child_stress_chart" style="width:100%;max-width:600px"></canvas></div>`));
-    $content.append($(`<div id="child_stres_table" class="table"></div>`));
+    $content.append($(`<div id="child_stress_table" class="table"></div>`));
     $content.append($(`<div class="desc round-all h200 mt40">${v}</div>`));
  
     makePageContent();
 
-    childSress();
+    stress("child_stress", "Child Stress", data21)
 }
 
 function reportPart22() {
@@ -757,12 +799,12 @@ function reportPart22() {
     $content.append($(`<div class="title"><img src="./images/report/no2.png" /><span>STRESS(2)</span></div>`));
     $content.append($(`<div class="subtitle"><span>양육자의 스트레스 영역</span></div>`));
     $content.append($(`<div class="chart"><canvas id="fosterer_stress_chart" style="width:100%;max-width:600px"></canvas></div>`));
-    $content.append($(`<div id="fosterer_stres_table" class="table"></div>`));
+    $content.append($(`<div id="fosterer_stress_table" class="table"></div>`));
     $content.append($(`<div class="desc round-all h200 mt70">${v}</div>`));
    
     makePageContent();
 
-    fostererSress();
+    stress("fosterer_stress", "Fosterer Stress", data22);
 }
 
 function reportPart23() {
@@ -772,12 +814,13 @@ function reportPart23() {
     $content.append($(`<div class="title"><img src="./images/report/no2.png" /><span>STRESS(3)</span></div>`));
     $content.append($(`<div class="subtitle"><span>생활 스트레스 영역</span></div>`));
     $content.append($(`<div class="chart"><canvas id="life_stress_chart" style="width:100%;max-width:600px"></canvas></div>`));
-    $content.append($(`<div id="life_stres_table" class="table"></div>`));
+    $content.append($(`<div id="life_stress_table" class="table"></div>`));
     $content.append($(`<div class="desc round-all h200 mt40">${v}</div>`));
     
     makePageContent();
 
-    lifeSress();
+    stress("life_stress", "Life Stress", data23)
+
 }
 
 function reportPart3() {
@@ -1050,40 +1093,28 @@ function interaction(data, partNo) {
     }); // group
 }
 
-function childSress() {
-    let labels = ["주의산만/과잉행동", "적응이 어려움", "보상이 부족함", "요구", "기분", "수용", "평균"];
-    let descs = ["주의력 결핍/과잉행동장애 증상을 반영하는 자녀의 행동적 특성", 
-                "사회적이거나 물리적 환경 변화에 적응하는 자녀의 능력", 
-                "부모가 자녀와의 상호작용으로 긍정적인 경험을 하게 되는 정도", 
-                "자녀가 요구하는 것에 대한 부모의 경험", 
-                "자녀의 정서적 상태", 
-                "부모의 기대에 부응하는 자녀 특성의 정도", 
-                ""];
-     
-    let $v2111 = $('#v2111').val().trim()==''?0:$('#v2111').val() * 1;
-    let $v2112 = $('#v2112').val().trim()==''?0:$('#v2112').val() * 1;
-    let $v2121 = $('#v2121').val().trim()==''?0:$('#v2121').val() * 1;
-    let $v2122 = $('#v2122').val().trim()==''?0:$('#v2122').val() * 1;
-    let $v2131 = $('#v2131').val().trim()==''?0:$('#v2131').val() * 1;
-    let $v2132 = $('#v2132').val().trim()==''?0:$('#v2132').val() * 1;
-    let $v2141 = $('#v2141').val().trim()==''?0:$('#v2141').val() * 1;
-                
+function stress(id, title, data) {
 
-    let datas = [$v2111, $v2112, $v2121, $v2122, $v2131, $v2132, $v2141];
-    let colors = ["#F2A148", "#F2A148","#F2A148","#F2A148","#F2A148", "#F2A148", "#F2A148"];
-    //append bar  chart
-    new Chart("child_stress_chart", {
+    let chartId = `${id}_chart`;
+    let tableId = `#${id}_table`;
+
+    let datas = [];
+    data.keys.forEach(key => {
+        datas.push($(`#${key}`).val().trim()==''?0:$(`#${key}`).val() * 1) ;
+    } );
+
+    new Chart(chartId, {
         type: "horizontalBar",
         data: {
-            labels: labels,
+            labels: data.labels,
             datasets: [{
-            backgroundColor: colors,
+            backgroundColor: data.colors,
             data: datas
             }]
         },
         options: {
             legend: {display: false},
-            title: {display: false,	text: "Child Stress"},
+            title: {display: false,	text: title},
             scales: {
                 yAxes: [{
                         display: true,
@@ -1111,141 +1142,17 @@ function childSress() {
     $Table.append('<tbody>');
     $Table.append('<tr><th>항목</th><th nowrap>표준점수</th><th>설명</th><th>단계</th></tr>');
     let i;
-    for(i = 0 ;i < labels.length - 1; i++) {
-        $Table.append('<tr><td>' + labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
+    for(i = 0 ;i < data.labels.length - 1; i++) {
+        $Table.append('<tr><td>' + data.labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + data.descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
     }
-    $Table.append('<tr class="avg"><td>' + labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
-
-    $Table.append('</tbody>');
-    $('#child_stres_table').append($Table);
-}
-
-function fostererSress() {
-    let labels = ["유능감", "고립", "애착", "건강", "역할제한", "우울", "양육파트너 관계", "평균"];
-    let descs = ["부모 역할에 대한 능력감과 얼마나 편안하게 느끼고 있는지 정도", 
-                "사회적 지지정도", 
-                "친밀도를 느끼는 정도 및 자녀의 요구를 잘 관찰하고 반응할 수 있는 능력", 
-                "전반적인 양육 스트레스에 영향을 미칠 수 있는 부모의 건강정도", 
-                "부모 역할의 결과로 나타나는 자유의 제한 및 개인 정체성의 제약에 대한 지각", 
-                "부모의 정서적인 상태", 
-                "양육파트너로부터 받는 정서적 및 물리적 지지에 대한 부모의 지각",
-                ""];
-
-    let $v2211 = $('#v2211').val().trim()==''?0:$('#v2211').val() * 1;
-    let $v2212 = $('#v2212').val().trim()==''?0:$('#v2212').val() * 1;
-    let $v2221 = $('#v2221').val().trim()==''?0:$('#v2221').val() * 1;
-    let $v2222 = $('#v2222').val().trim()==''?0:$('#v2222').val() * 1;
-    let $v2231 = $('#v2231').val().trim()==''?0:$('#v2231').val() * 1;
-    let $v2232 = $('#v2232').val().trim()==''?0:$('#v2232').val() * 1;
-    let $v2241 = $('#v2241').val().trim()==''?0:$('#v2241').val() * 1;
-    let $v2242 = $('#v2242').val().trim()==''?0:$('#v2242').val() * 1;
-    
-    let datas = [$v2211, $v2212, $v2221, $v2222, $v2231, $v2232, $v2241, $v2242];
-    let colors = ["#F2A148", "#F2A148","#F2A148","#F2A148","#F2A148", "#F2A148", "#F2A148", "#F2A148"];
-    //append bar  chart
-    new Chart("fosterer_stress_chart", {
-        type: "horizontalBar",
-        data: {
-            labels: labels,
-            datasets: [{
-            backgroundColor: colors,
-            data: datas
-            }]
-        },
-        options: {
-            legend: {display: false},
-            title: {display: false,	text: "fosterer Stress"},
-            scales: {
-                yAxes: [{
-                        display: true,
-                        ticks: {
-                            fontSize : 14,
-                        }
-                    }],
-                xAxes: [{
-                        display: true,
-                        ticks: {
-                            beginAtZero: true,
-                            steps: 10,
-                            stepValue: 5,
-                            max: 100,
-                            fontSize : 14,
-                        }
-                    }]
-            }
-        }
-    });
-
-    //append table
-    var $Table = $('<table/>');
-    $Table.append('<colgroup><col width="18%"/><col width="8%"/><col width="64%"/><col width="10%"/></colgroup>');
-    $Table.append('<tbody>');
-    $Table.append('<tr><th>항목</th><th nowrap>표준점수</th><th>설명</th><th>단계</th></tr>');
-    let i;
-    for(i = 0 ;i < labels.length - 1; i++) {
-        $Table.append('<tr><td>' + labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
+    if (id != "life_stress") {
+        $Table.append('<tr class="avg"><td>' + data.labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + data.descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
+    } else {
+        $Table.append('<tr><td>' + data.labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + data.descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
     }
-    $Table.append('<tr class="avg"><td>' + labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
-
+ 
     $Table.append('</tbody>');
-    $('#fosterer_stres_table').append($Table);
-}
-
-function lifeSress() {
-    var labels = ["총 스트레스", "생활 스트레스"];
-    var descs = ["자녀영역 및 부모영역 스트레스 총합", 
-                "부모가 현재 겪고 있는 부모·자녀관계 이외의 스트레스 양"
-                ];
-
-    let $v2311 = $('#v2311').val().trim()==''?0:$('#v2311').val() * 1;
-    let $v2312 = $('#v2312').val().trim()==''?0:$('#v2312').val() * 1;
-    var datas = [$v2311, $v2312];
-    var colors = ["#F2A148", "#F2A148"];
-    //append bar  chart
-    new Chart("life_stress_chart", {
-        type: "horizontalBar",
-        data: {
-            labels: labels,
-            datasets: [{
-            backgroundColor: colors,
-            data: datas
-            }]
-        },
-        options: {
-            legend: {display: false},
-            title: {display: false,	text: "life Stress"},
-            scales: {
-                yAxes: [{
-                        display: true,
-                        ticks: {
-                            fontSize : 14,
-                        }
-                    }],
-                xAxes: [{
-                        display: true,
-                        ticks: {
-                            beginAtZero: true,
-                            steps: 10,
-                            stepValue: 5,
-                            max: 100,
-                            fontSize : 14,
-                        }
-                    }]
-            }
-        }
-    });
-
-    //append table
-    var $Table = $('<table/>');
-    $Table.append('<colgroup><col width="18%"/><col width="8%"/><col width="64%"/><col width="10%"/></colgroup>');
-    $Table.append('<tbody>');
-    $Table.append('<tr><th>항목</th><th nowrap>표준점수</th><th>설명</th><th>단계</th></tr>');
-    let i;
-    for(i = 0 ;i < labels.length; i++) {
-        $Table.append('<tr><td>' + labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
-    }
-    $Table.append('</tbody>');
-    $('#life_stres_table').append($Table);
+    $(tableId).append($Table);
 }
 
 function getGrade(score){
