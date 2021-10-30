@@ -618,7 +618,7 @@ function answerForm(key) {
 
   
 function stressForm(data, tbodyId) {
-  debugger;  
+  //debugger;  
     $tBody = $(`#${tbodyId}`);
    
     let $tr, td1, td2;

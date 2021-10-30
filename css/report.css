@@ -48,6 +48,7 @@ body		{ padding:0;margin:0;font-family: 'NanumSquare', sans-serif; transform: no
 .btn-pack.prev {display:inline-block; width:130px; height:52px; border-radius:26px; border:0; background:#505050; font-size:20px; line-height:52px; color:#fff; letter-spacing:0; font-weight:800;}
 .btn-pack.preview {display:inline-block; width:130px; height:52px; border-radius:26px; border:0; background:#fd8239; font-size:20px; line-height:52px; color:#fff; letter-spacing:0; font-weight:800;}
 .btn-pack.print-pdf {margin-bottom:30px;display:inline-block; width:130px; height:52px; border-radius:26px; border:0; background:#fd8239; font-size:20px; line-height:52px; color:#fff; letter-spacing:0; font-weight:800;}
+.btn-pack.go-preview {margin-bottom:30px;display:inline-block; width:130px; height:52px; border-radius:26px; border:0; background:#fd8239; font-size:20px; line-height:52px; color:#fff; letter-spacing:0; font-weight:800;}
 .btn-pack.close {display:inline-block; width:130px; height:52px; border-radius:26px; border:0; background:#505050; font-size:20px; line-height:52px; color:#fff; letter-spacing:0; font-weight:800;}
 
 .sticky-bottom{position: sticky;bottom:0px; width: 100%;}
@@ -117,8 +118,32 @@ input[type="radio"]:hover:before {
     filter: alpha(opacity=50);
 }
 
+#report-alert {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 230px;
+    margin: 0 auto;
+    padding: 0;
+    overflow-y: auto;
+    background-color: #fff;
+    border: 1px solid #505050;
+    border-radius:10px;
+    z-index: 100;
+}
+#report-alert .report-alert-content {
+    margin: 20px auto;
+    padding :20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+
 #report-preview {
     position: absolute;
+    display: none;
     top: 50%;
     left: 50%;
     width: 870px;
