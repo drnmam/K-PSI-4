@@ -558,7 +558,53 @@ const data33 = [
             아이가 부모의 말을 잘 수용하고 받아 드릴 때는 칭찬을 통해 긍정적인 자아상을 만들어나갈 수 있도록 해 주세요."
         ]}]},    
 ];
+//--------------------------------------------------------------------------------------------------------------------------------------------
 
+function interaction_form(data, tbody) {
+    //자녀의 상호작용 관찰 분석
+    //console.log(data32)
+    let no = 1;
+    // $reportPart = 	$('#report-part' + partNo);
+
+    // let $pageContainert;
+    // let $page;
+    // let $top;
+    // let $middle;
+    // let $bottom;
+    // let $content;
+
+    let $title;
+    let $group;
+    let $item;
+    let $desc;
+    let groupNo = 1;
+    let score;
+    let desc;
+    $tBody = 	$(`#${tbody}`);
+
+   
+
+    data.forEach(data => {
+        //console.log(data);
+        groupNo = 1;
+        for (const [groupKey, group] of Object.entries(data)) {
+            console.log(`${groupKey} ${group.length}`); //주도성
+            
+            group.forEach(groupItems => {
+                console.log(groupItems);
+
+                
+
+               
+               
+                
+            }); //forEach
+
+           
+        } //for
+    }); // group
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------
 let $reportContainer = $("#report-container");
 let $reportPart;
 let $pageContainer;
@@ -624,7 +670,7 @@ function makePageContainer(pageNo) {
     $top = $('<div class="top"></div>')
     $middle = $('<div class="middle"></div>')
     $content = $('<div class="content"></div>')
-    $bottom = $('<div class="bottom"></div>')
+    $bottom = $(`<div class="bottom"><span class="page-no">${pageNo}</span></div>`)
 }
 function makePageContent() {
     $page.append($top);
@@ -678,11 +724,11 @@ function reportPart0() {
 function reportPart1() {
     makeReportPart(1); 
     makePageContainer($nPage++);
-    
+    let v = "" //$('#v2151').val();
     $content.append($(`<div class="title"><img src="../images/report/no1.png" /><span>${$('#v1121').val()} ${$('#v1112').val()}의 양육스트레스</span></div>`));
     $content.append($(`<div class="subtitle"><span>검사소개</span></div>`));
     $content.append($(`<img src="../images/report/1_1.png">`));
-    $content.append($(`<div class="desc round-all mt40 h250">닥터 아이와 닥터 엄마를 위한 심리적 상호작용 맞춤 솔루션 하나, 둘, 셋은 이렇게 나왔습니다.</div>`));
+    $content.append($(`<div class="desc round-all mt40 h250">${v}</div>`));
     $content.append($(`<img src="../images/report/1_2.png" >`));
 
     makePageContent();
@@ -740,9 +786,9 @@ function reportPart3() {
 
     $content.append($(`<div class="title"><img src="../images/report/no3.png" /><span>아이와 보호자 의 상호작용 관찰 평가, 분석</span></div>`));
     $content.append($(`<div class="subtitle"><span>아동에게 놀이는 정말 중요할까요?</span></div>`));
-    $content.append($(`<img class="img-3-1" src="../images/report/3_1.jpg" >`));
+    $content.append($(`<img class="img-3-1" src="../images/report/3_1.png" >`));
     $content.append($(`<div class="subtitle"><span>왜 자유놀이 상황을 통해 상호작용관찰을 할까요?</span></div>`));
-    $content.append($(`<img class="img-3-2" src="../images/report/3_2.jpg" >`));
+    $content.append($(`<img class="img-3-2" src="../images/report/3_2.png" >`));
     $content.append($(`<img class="img-3-3" src="../images/report/3_3.png" >`));
 
 
@@ -867,13 +913,25 @@ function reportPart9() {
     
 }
 
+// function reportPart10() {
+//     makeReportPart(10);
+//     makePageContainer($nPage++);
+//     $content.append($(`<div class="desc round-bottom h200 mb20">마지막페이지 통이미지 필요</div>`));
+//     makePageContent();
+// }
+
 function reportPart10() {
-    makeReportPart(10);
-    makePageContainer($nPage++);
-    $content.append($(`<div class="desc round-bottom h200 mb20">마지막페이지 통이미지 필요</div>`));
-    makePageContent();
+    makeReportPart(0);
+    $pageContainer = $(`<div id="cover" class="page-container"></div>`);
+    $page = $('<div class="page"></div>');
+    let $end = $('<div class="end"></div>');
 
-
+    $page.append($end);
+    $pageContainer.append($page);
+    $reportPart.append($pageContainer);
+     
+    $reportContainer.append($reportPart);
+    //$reportContainer.append($pageContainer);
 }
 
 function interaction(data, partNo) {

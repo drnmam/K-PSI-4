@@ -80,19 +80,15 @@ body		{ padding:0;margin:0;font-family: 'NanumSquare', sans-serif; transform: no
 input.input {width:100%; max-width:180px;}
 input.number {text-align:center}
 label.error {background-color: red;}
-input.error, textarea.error {border:2px solid red;background-color: red;}
+input.error, textarea.error {border:2px solid red}
 
-input[type='radio'] { width:25px;height:25px ;}
-input[type='radio'].error {border-radius: 10px; -webkit-border-radius: 10px; -webkit-appearance: none; appearance: none;}
+
 /* https://bbbootstrap.com/snippets/custom-radio-button-hover-effect-48538268 */
-/*
-
-
-input[type='radio']:hover { box-shadow: inset 0 0 0 3px #fff; background: gray;}
-input[type="radio"]:hover:before {
+input[type='radio'] { width:25px;height:25px }
+input[type='radio']:hover > i{ box-shadow: inset 0 0 0 3px #fff; background: gray;}
+input[type="radio"]+label:hover:before {
     background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5)
 }
-*/
 
 
 /*미리보기*/
@@ -195,17 +191,16 @@ progress {
 }
 
 .page .cover {margin:0;padding:0;width:794px;height:1123px;background-image: url("../images/report/cover.png");}
-.page .cover .name {position: absolute;top:385px;left:290px; font-size:18px;font-weight:600}
-.page .cover .gender {position: absolute;top:415px;left:290px; font-size:18px;font-weight:600}
-.page .cover .age {position: absolute;top:445px;left:290px; font-size:18px;font-weight:600}
-.page .cover .birth-date {position: absolute;top:475px;left:290px; font-size:18px;font-weight:600}
-.page .cover .observation-date1 {position: absolute;top:527px;left:290px; font-size:16px;font-weight:600}
-.page .cover .observation-date2 {position: absolute;top:549px;left:290px; font-size:16px;font-weight:600}
+.page .cover .name {position: absolute;top:385px;left:320px; font-size:18px;font-weight:600}
+.page .cover .gender {position: absolute;top:415px;left:320px; font-size:18px;font-weight:600}
+.page .cover .age {position: absolute;top:445px;left:320px; font-size:18px;font-weight:600}
+.page .cover .birth-date {position: absolute;top:475px;left:320px; font-size:18px;font-weight:600}
+.page .cover .observation-date1 {position: absolute;top:527px;left:320px; font-size:16px;font-weight:600}
+.page .cover .observation-date2 {position: absolute;top:549px;left:320px; font-size:16px;font-weight:600}
 
 .page .top {margin:0;padding:0;width:794px;height:90px;background-image: url("../images/report/top.png");}
 .page .middle {margin:0;padding:0;width:794px;height:948px;background-image: url("../images/report/line.png");}
-.page .bottom {margin:0;padding:0;width:794px;height:85px;background-image: url("../images/report/bottom.png");text-align:center}
-.page .bottom .page-no {display: inline-block;margin-top:30px;font-size:18px;font-weight:800}
+.page .bottom {margin:0;padding:0;width:794px;height:85px;background-image: url("../images/report/bottom.png");}
 
 .page .middle .content {margin:0 77px 0 76px;padding:0;width:641px;height:953px;}
 
@@ -270,8 +265,6 @@ progress {
 .page .middle .content .img-6-1 {margin-left:400px;}
 .page .middle .content .img-8-1 {margin-left:400px;margin-top:-50px}
 .page .middle .content .img-9-1 {margin-left:330px;margin-top:-90px}
-
-.page .end {margin:0;padding:0;width:794px;height:1123px;background-image: url("../images/report/end.png");}
 
 div1 {border: solid 1px #000;}
 /*

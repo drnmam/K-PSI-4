@@ -213,7 +213,7 @@
 			</div>
 			<div class="real-cont">
 				<!--// content -->
-				<form action="return false;">
+				<form action="">
 					<div class="report-area">
 						<div class="report-htab">
 							<ul>
@@ -267,15 +267,6 @@
 												</td>
 												<th scope="row"><label >성별</label></th>
 												<td>
-													<!--
-													<label class="radio">
-														<input type="radio" name="v1132" value="0" required><i></i> 여자
-													</label>
-													<label class="radio">
-														<input type="radio" name="v1132" value="0" required><i></i> 남자
-													</label>
-													-->
-													
 													<input type="radio" name="v1132" id="v1132-1" value="여자" required>
 													<label for="v1132-1">										
 														<i></i> 여자
@@ -285,7 +276,6 @@
 													<label for="v1132-2">
 														<i></i> 남자
 													</label>
-													
 												</td>
 											</tr>
 											<tr>
@@ -1039,7 +1029,7 @@
 												<col style="width:40%">
 												<col style="width:40%">
 											</colgroup>
-											<tbody id="child-interaction">
+											<tbody>
 												<tr>
 													<th scope="row" rowspan="2">주도성</th>
 													<th scope="row" class="left">아동이 놀잇감을 선택하도록 기회를 제공한다.</th>
@@ -1750,8 +1740,6 @@
 		let hIndex = 0;
 		$(document).ready(function(){
 
-			interaction_form(data32, "")
-
 			let $hTabItems = $('.report-htab>ul>li');
 			//console.log($hTabItems);
 			let $vTabItems = $('.report-vtab>ul>li');
@@ -1887,7 +1875,7 @@
 				invalidHandler: function() {
 					console.log( validator.numberOfInvalids() + " field(s) are invalid" );
 					if (validator.numberOfInvalids() > 0) {
-						if(confirm(`입력하지 않은 필드 "${validator.numberOfInvalids()}"가 있습니다. \n입력전에  미리보기를 하시겠습니까?`)) {
+						if(confirm(`입력하지 않은 필드 ${validator.numberOfInvalids()}"가 있습니다. 입력전에  미리보기를 하시겠습니ㄷ까?`)) {
 							preview();
 						}
 					}
@@ -1899,12 +1887,6 @@
 					// 	element.parents().addClass("error");
             		// } 
 					return true;
-				},
-				submitHandler: function(form) {
-					// 필요에 따라 ajax를 사용한 제출등으로 변경가능.
-					preview();
-					return false;
-
 				}
 			});
 			console.log(validator);
