@@ -132,6 +132,7 @@ input[type="radio"]:hover:before {
     border: 1px solid #505050;
     border-radius:10px;
     z-index: 100;
+    overflow: hidden;
 }
 #report-alert .report-alert-content {
     margin: 20px auto;
