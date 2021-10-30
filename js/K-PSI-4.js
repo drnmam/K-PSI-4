@@ -1193,9 +1193,9 @@ async function HTML2PDF() {
     //홍판서 의 자녀 홍길동  상호작용 심리평가 보고서_20210901061515
     
     let date = new Date().toISOString().slice(0, 19).replace(/-|:/g, '');
+    
 
-
-    doc.save(`${$('#v1111').val()}의 ${$('#v1112').val()} ${$('#v1121').val()}의 상호작용 심리평가 보고서_${date}.pdf`); //pdf저장
+    doc.save(`${$('#v1121').val()}의 ${$('#v1112').val()} ${$('#v1111').val()}와의 상호작용 심리평가 보고서_${date}.pdf`); //pdf저장
     initProgress();
 };
 
