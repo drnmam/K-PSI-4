@@ -158,13 +158,25 @@ input[type="radio"]:hover:before {
 }
 
 progress {
-    display: none;
-    color: #fd8239;
-    border: 0;
-    height: 52px;
-    width: 400px;
+    /*display: none;*/
+    display: inline-block;
+    color: #fff;
+   /* border: 0; 
+    height: 52px; */
+    width: 500px;
+    height:3em;
     border-radius: 10px;
+    font-size: 20px;
     margin-bottom:30px;   
+    text-align: center;
+}
+
+progress::before {
+    position: absolute;
+    content: attr(value)'%';
+    font-size: 20px;
+    margin:10px 0 10px -20px;
+    padding: 10px;
 }
 
 /* 출력 */
@@ -299,6 +311,7 @@ progress {
 .page .end {margin:0;padding:0;width:794px;height:1123px;background-image: url("../images/report/end.png");}
 
 div1 {border: solid 1px #000;}
+
 /*
 
 .page .report-01 {margin:0;padding:0;width:794px;height:1123px;background-image: url("../images/report/report_01.jpg");}
