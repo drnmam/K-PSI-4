@@ -725,11 +725,11 @@ function reportPart1() {
     makeReportPart(1); 
     makePageContainer($nPage++);
     let v = "" //$('#v2151').val();
-    $content.append($(`<div class="title"><img src="../images/report/no1.png" /><span>${$('#v1121').val()} ${$('#v1112').val()}의 양육스트레스</span></div>`));
+    $content.append($(`<div class="title"><img src="./images/report/no1.png" /><span>${$('#v1121').val()} ${$('#v1112').val()}의 양육스트레스</span></div>`));
     $content.append($(`<div class="subtitle"><span>검사소개</span></div>`));
-    $content.append($(`<img src="../images/report/1_1.png">`));
+    $content.append($(`<img src="./images/report/1_1.png">`));
     $content.append($(`<div class="desc round-all mt40 h250">${v}</div>`));
-    $content.append($(`<img src="../images/report/1_2.png" >`));
+    $content.append($(`<img src="./images/report/1_2.png" >`));
 
     makePageContent();
     
@@ -739,7 +739,7 @@ function reportPart21() {
     makeReportPart(21);
     makePageContainer($nPage++);
     let v = $('#v2151').val();
-    $content.append($(`<div class="title"><img src="../images/report/no2.png" /><span>STRESS(1)</span></div>`));
+    $content.append($(`<div class="title"><img src="./images/report/no2.png" /><span>STRESS(1)</span></div>`));
     $content.append($(`<div class="subtitle"><span>자녀의 스트레스 영역</span></div>`));
     $content.append($(`<div class="chart"><canvas id="child_stress_chart" style="width:100%;max-width:600px"></canvas></div>`));
     $content.append($(`<div id="child_stres_table" class="table"></div>`));
@@ -754,7 +754,7 @@ function reportPart22() {
     makeReportPart(22);
     makePageContainer($nPage++);
     let v = $('#v2251').val();
-    $content.append($(`<div class="title"><img src="../images/report/no2.png" /><span>STRESS(2)</span></div>`));
+    $content.append($(`<div class="title"><img src="./images/report/no2.png" /><span>STRESS(2)</span></div>`));
     $content.append($(`<div class="subtitle"><span>양육자의 스트레스 영역</span></div>`));
     $content.append($(`<div class="chart"><canvas id="fosterer_stress_chart" style="width:100%;max-width:600px"></canvas></div>`));
     $content.append($(`<div id="fosterer_stres_table" class="table"></div>`));
@@ -769,7 +769,7 @@ function reportPart23() {
     makeReportPart(23);
     makePageContainer($nPage++);
     let v = $('#v2321').val();
-    $content.append($(`<div class="title"><img src="../images/report/no2.png" /><span>STRESS(3)</span></div>`));
+    $content.append($(`<div class="title"><img src="./images/report/no2.png" /><span>STRESS(3)</span></div>`));
     $content.append($(`<div class="subtitle"><span>생활 스트레스 영역</span></div>`));
     $content.append($(`<div class="chart"><canvas id="life_stress_chart" style="width:100%;max-width:600px"></canvas></div>`));
     $content.append($(`<div id="life_stres_table" class="table"></div>`));
@@ -784,12 +784,12 @@ function reportPart3() {
     makeReportPart(3);
     makePageContainer($nPage++);
 
-    $content.append($(`<div class="title"><img src="../images/report/no3.png" /><span>아이와 보호자 의 상호작용 관찰 평가, 분석</span></div>`));
+    $content.append($(`<div class="title"><img src="./images/report/no3.png" /><span>아이와 보호자 의 상호작용 관찰 평가, 분석</span></div>`));
     $content.append($(`<div class="subtitle"><span>아동에게 놀이는 정말 중요할까요?</span></div>`));
-    $content.append($(`<img class="img-3-1" src="../images/report/3_1.png" >`));
+    $content.append($(`<img class="img-3-1" src="./images/report/3_1.png" >`));
     $content.append($(`<div class="subtitle"><span>왜 자유놀이 상황을 통해 상호작용관찰을 할까요?</span></div>`));
-    $content.append($(`<img class="img-3-2" src="../images/report/3_2.png" >`));
-    $content.append($(`<img class="img-3-3" src="../images/report/3_3.png" >`));
+    $content.append($(`<img class="img-3-2" src="./images/report/3_2.png" >`));
+    $content.append($(`<img class="img-3-3" src="./images/report/3_3.png" >`));
 
 
     makePageContent();
@@ -805,8 +805,8 @@ function reportPart4() {
     let d2 = $('#v1142').val()
     let v2 = $('#v3121').val();
     
-    $content.append($(`<div class="title"><img src="../images/report/no4.png" /><span>아이의 행동 관찰로 본 전반적인 발달상태</span></div>`));
-    $content.append($(`<img class="img-4-1" src="../images/report/4_1.png" ><!--TODO DIV background로 변경해야함-->`));
+    $content.append($(`<div class="title"><img src="./images/report/no4.png" /><span>아이의 행동 관찰로 본 전반적인 발달상태</span></div>`));
+    $content.append($(`<img class="img-4-1" src="./images/report/4_1.png" ><!--TODO DIV background로 변경해야함-->`));
 
     $content.append($(`<div style="margin-top:-83px"><div class="group"><span>1회차</span></div><span>${d1}</span></div>`));
     $content.append($(`<div class="desc round-right-bottom h200 mb20">${v1}</div>`));
@@ -831,14 +831,14 @@ function reportPart6() {
     let v2 = $('#v3271').val();
     let v3 = $('#v3281').val();
 
-    $content.append($(`<div class="title"><img src="../images/report/no6.png" /><span>아이 분석</span></div>`));
+    $content.append($(`<div class="title"><img src="./images/report/no6.png" /><span>아이 분석</span></div>`));
     $content.append($(`<div class="subtitle"><span>${v0} 아이의 강점</span></div>`));
     $content.append($(`<div class="desc round-all h200 mb20">${v1}</div>`));
     $content.append($(`<div class="subtitle"><span>${v0} 아이의 약점</span></div>`));
     $content.append($(`<div class="desc round-all h100 mb20">${v1}</div>`));
     $content.append($(`<div class="subtitle"><span>BJW-TIP (양육스트레스와 연결해 생각해보세요)</span></div>`));
     $content.append($(`<div class="desc round-all h100 mb20">${v1}</div>`));
-    $content.append($(`<img class="img-6-1" src="../images/report/6_1.png" >`));
+    $content.append($(`<img class="img-6-1" src="./images/report/6_1.png" >`));
 
 
 
@@ -859,8 +859,8 @@ function reportPart8() {
     let v3 = $('#v3371').val();
     let v4 = $('#v3381').val();
     
-    $content.append($(`<div class="title"><img src="../images/report/no8.png" /><span>${v1} 분석</span></div>`));
-    $content.append($(`<img class="img-8-1" src="../images/report/8_1.png" >`));
+    $content.append($(`<div class="title"><img src="./images/report/no8.png" /><span>${v1} 분석</span></div>`));
+    $content.append($(`<img class="img-8-1" src="./images/report/8_1.png" >`));
     $content.append($(`<div class="subtitle" style="margin-top:-60px"><span>${v0} ${v1}의 강점</span></div>`));
     $content.append($(`<div class="desc round-all h200 mb20">${v2}</div>`));
     $content.append($(`<div class="subtitle"><span>${v0} ${v1}의 약점</span></div>`));
@@ -885,8 +885,8 @@ function reportPart9() {
     let v8 = $('#v4151').val();
 
     makePageContainer($nPage++);
-    $content.append($(`<div class="title"><img src="../images/report/no9.png" /><span>아이와 ${v0}를 위한 맞춤 솔루션</span></div>`));
-    $content.append($(`<img class="img-9-1" src="../images/report/9_1.png" >`));
+    $content.append($(`<div class="title"><img src="./images/report/no9.png" /><span>아이와 ${v0}를 위한 맞춤 솔루션</span></div>`));
+    $content.append($(`<img class="img-9-1" src="./images/report/9_1.png" >`));
     $content.append($(`<div class="item round" ><span>하나. ${v1}</span></div>`));
     $content.append($(`<div class="desc round-bottom h200 mb20">${v2}</div>`));
     $content.append($(`<div class="item round"><span>둘. ${v3}</span></div>`));
@@ -903,8 +903,8 @@ function reportPart9() {
 
     makePageContainer($nPage++);
 
-    $content.append($(`<div class="title"><img src="../images/report/no9.png" /><span>아이와 ${v0}를 위한 맞춤 솔루션</span></div>`));
-    $content.append($(`<img class="img-9-1" src="../images/report/9_1.png" >`));
+    $content.append($(`<div class="title"><img src="./images/report/no9.png" /><span>아이와 ${v0}를 위한 맞춤 솔루션</span></div>`));
+    $content.append($(`<img class="img-9-1" src="./images/report/9_1.png" >`));
     $content.append($(`<div class="item round"><span>장점</span></div>`));
     $content.append($(`<div class="desc round-bottom h200 mb20">${v7}</div>`));
     $content.append($(`<div class="item round"><span>단점</span></div>`));
@@ -997,9 +997,9 @@ function interaction(data, partNo) {
                     
                     if ((groupNo % 2) == 1) {
                         if (partNo == 5) {
-                            $title = $(`<div class="title"><img src="../images/report/no${partNo}.png" /><span>${v0}의 상호작용 관찰 분석</span></div>`);
+                            $title = $(`<div class="title"><img src="./images/report/no${partNo}.png" /><span>${v0}의 상호작용 관찰 분석</span></div>`);
                         } else {
-                            $title = $(`<div class="title"><img src="../images/report/no${partNo}.png" /><span>${v0} ${v1}의 상호작용 관찰 분석</span></div>`);
+                            $title = $(`<div class="title"><img src="./images/report/no${partNo}.png" /><span>${v0} ${v1}의 상호작용 관찰 분석</span></div>`);
                         }
                         $group = $(`<div class="group"><span>${groupKey}</span></div>`);
 
@@ -1279,7 +1279,7 @@ async function HTML2PDF() {
 
     }
     // let img = new Image();
-    // img.src = '../images/report/cover.jpg'
+    // img.src = './images/report/cover.jpg'
     // doc.addPage();
     // doc.addImage(img, 'JPG', 0, 0, 595.28, 841.89);
     doc.save('sample-file.pdf'); //pdf저장
