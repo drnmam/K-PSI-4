@@ -605,6 +605,7 @@ function interaction_form(data, tbody) {
     }); // group
 }
 //--------------------------------------------------------------------------------------------------------------------------------------------
+
 let $reportContainer = $("#report-container");
 let $reportPart;
 let $pageContainer;
