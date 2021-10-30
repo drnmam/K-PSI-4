@@ -1195,7 +1195,8 @@ async function HTML2PDF() {
     let date = new Date().toISOString().slice(0, 19).replace(/-|:/g, '');
     
 
-    doc.save(`${$('#v1121').val()}의 ${$('#v1112').val()} ${$('#v1111').val()}와의 상호작용 심리평가 보고서_${date}.pdf`); //pdf저장
+    //doc.save(`${$('#v1121').val()}의 ${$('#v1112').val()} ${$('#v1111').val()}와의 상호작용 심리평가 보고서_${date}.pdf`); //pdf저장
+    doc.save(`${$('#v1121').val()}의 심리평가 보고서_${date}.pdf`); //pdf저장
     initProgress();
 };
 
