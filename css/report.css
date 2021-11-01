@@ -285,7 +285,7 @@ progress::before {
 .page .middle .content .img-1-2 {margin-left:100px}
 
 .page .middle .content .chart  {margin-left:32px;padding:10px;width:555px;height:300px;}
-.page .middle .content .table  {margin:0 0 0 -1px;padding:0px;width:644px;height:200px;}
+.page .middle .content .table  {margin:0px;padding:0px;width:643px;height:200px;}
 .page .middle .content .table TABLE {width:100%; border-collapse: collapse;}
 .page .middle .content .table TABLE TH {background-color: #EA6C92;color:#ffffff;font-size:11pt;line-height: 20pt;font-weight:400;text-align: center;}
 .page .middle .content .table TABLE TD {font-size:11pt;font-weight:400;text-align: center;padding:3px 0}
