@@ -770,8 +770,8 @@ function reportPart1() {
     $content.append($(`<div class="title"><img src="./images/report/no1.png" /><span>${$('#v1121').val()} ${$('#v1112').val()}의 양육스트레스</span></div>`));
     $content.append($(`<div class="subtitle"><span>검사소개</span></div>`));
     $content.append($(`<img src="./images/report/1_1.png">`));
-    $content.append($(`<div class="desc round-all mt40 h250">${v}</div>`));
-    $content.append($(`<img src="./images/report/1_2.png" >`));
+    //$content.append($(`<div class="desc round-all mt40 h250">${v}</div>`));
+    $content.append($(`<img class="img-1-2"src="./images/report/1_2.png" >`));
 
     makePageContent();
     
