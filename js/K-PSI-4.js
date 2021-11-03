@@ -800,7 +800,7 @@ function reportPart22() {
     $content.append($(`<div class="subtitle"><span>양육자의 스트레스 영역</span></div>`));
     $content.append($(`<div class="chart"><canvas id="fosterer_stress_chart" style="width:100%;max-width:600px"></canvas></div>`));
     $content.append($(`<div id="fosterer_stress_table" class="table"></div>`));
-    $content.append($(`<div class="desc round-all h200 mt70">${v}</div>`));
+    $content.append($(`<div class="desc round-all h200 mt80">${v}</div>`));
    
     makePageContent();
 
