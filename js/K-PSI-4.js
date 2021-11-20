@@ -1181,7 +1181,8 @@ async function HTML2PDF() {
                 showProgressBar(totalPage, i);
                 //$('#page-no').text(i);
             } 
-            doc.addImage(imgData, 'PNG', 0, 0, 595.28, 841.89); //이미지를 기반으로 pdf생성
+            //doc.addImage(imgData, 'PNG', 0, 0, 595.28, 841.89); //이미지를 기반으로 pdf생성
+            doc.addImage(imgData, 'PNG', 28.346, 48.519, 538.588, 756.852); //이미지를 기반으로 pdf생성
             
         });
 
