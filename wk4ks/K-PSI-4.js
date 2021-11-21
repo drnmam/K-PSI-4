@@ -1174,7 +1174,8 @@ async function HTML2PDF() {
         await html2canvas($el[i],{
             allowTaint: true,
         }).then(function(canvas) {
-            let imgData = canvas.toDataURL('image/png'); //캔버스를 이미지로 변환
+            //let imgData = canvas.toDataURL('image/png'); //캔버스를 default quality(0.91)이미지로 변환
+            let imgData = canvas.toDataURL('image/png', 1.0); //캔버스를 high quality(1.0) 이미지로 변환
             if (i > 0) {
                 doc.addPage();
                 //debugger;
@@ -1182,7 +1183,7 @@ async function HTML2PDF() {
                 //$('#page-no').text(i);
             } 
             //doc.addImage(imgData, 'PNG', 0, 0, 595.28, 841.89); //이미지를 기반으로 pdf생성
-            doc.addImage(imgData, 'PNG', 28.346, 48.519, 538.588, 756.852); //이미지를 기반으로 pdf생성
+            doc.addImage(imgData, 'PNG', 28.346, 48.519, 538.588, 756.852); //이미지를 기반으로 pdf생성, 여백추가
             
         });
 
@@ -1197,9 +1198,12 @@ async function HTML2PDF() {
     
 
     //doc.save(`${$('#v1121').val()}의 ${$('#v1112').val()} ${$('#v1111').val()}와의 상호작용 심리평가 보고서_${date}.pdf`); //pdf저장
-    doc.save(`${$('#v1121').val()}의 심리평가 보고서_${date}.pdf`); //pdf저장
+    let pdf = `${$('#v1121').val()}의 심리평가 보고서_${date}.pdf`;
+    doc.save(pdf); //pdf저장
     initProgress();
 };
+
+
 
 function showProgressBar(totalPage, page) {
     let progressRate = page / totalPage * 100;
