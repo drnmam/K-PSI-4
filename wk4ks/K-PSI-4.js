@@ -875,13 +875,14 @@ function reportPart6() {
     let v3 = $('#v3281').val();
 
     $content.append($(`<div class="title"><img src="./images/report/no6.png" /><span>아이 분석</span></div>`));
-    $content.append($(`<div class="subtitle"><span>${v0} 아이의 강점</span></div>`));
-    $content.append($(`<div class="desc round-all h200 mb20">${v1}</div>`));
-    $content.append($(`<div class="subtitle"><span>${v0} 아이의 약점</span></div>`));
-    $content.append($(`<div class="desc round-all h100 mb20">${v1}</div>`));
-    $content.append($(`<div class="subtitle"><span>BJW-TIP (양육스트레스와 연결해 생각해보세요)</span></div>`));
-    $content.append($(`<div class="desc round-all h100 mb20">${v1}</div>`));
     $content.append($(`<img class="img-6-1" src="./images/report/6_1.png" >`));
+    $content.append($(`<div class="subtitle" style="margin-top:-60px"><span>${v0} 아이의 강점</span></div>`));
+    $content.append($(`<div class="desc round-all h180 mb20">${v1}</div>`));
+    $content.append($(`<div class="subtitle"><span>${v0} 아이의 약점</span></div>`));
+    $content.append($(`<div class="desc round-all h180 mb20">${v2}</div>`));
+    $content.append($(`<div class="subtitle"><span>BJW-TIP (양육스트레스와 연결해 생각해보세요)</span></div>`));
+    $content.append($(`<div class="desc round-all h180 mb20">${v3}</div>`));
+    
 
 
 
@@ -905,11 +906,11 @@ function reportPart8() {
     $content.append($(`<div class="title"><img src="./images/report/no8.png" /><span>${v1} 분석</span></div>`));
     $content.append($(`<img class="img-8-1" src="./images/report/8_1.png" >`));
     $content.append($(`<div class="subtitle" style="margin-top:-60px"><span>${v0} ${v1}의 강점</span></div>`));
-    $content.append($(`<div class="desc round-all h200 mb20">${v2}</div>`));
+    $content.append($(`<div class="desc round-all h180 mb20">${v2}</div>`));
     $content.append($(`<div class="subtitle"><span>${v0} ${v1}의 약점</span></div>`));
-    $content.append($(`<div class="desc round-all h100 mb20">${v3}</div>`));
+    $content.append($(`<div class="desc round-all h180 mb20">${v3}</div>`));
     $content.append($(`<div class="subtitle"><span>BJW-TIP (양육스트레스와 연결해 생각해보세요)</span></div>`));
-    $content.append($(`<div class="desc round-all h100 mb20">${v4}</div>`));
+    $content.append($(`<div class="desc round-all h180 mb20">${v4}</div>`));
 
 
     makePageContent();
@@ -925,7 +926,7 @@ function reportPart9() {
     let v5 = $('#v4131').val();
     let v6 = $('#v4132').val();
     let v7 = $('#v4141').val();
-    let v8 = $('#v4151').val();
+    //let v8 = $('#v4151').val();
 
     makePageContainer($nPage++);
     $content.append($(`<div class="title"><img src="./images/report/no9.png" /><span>아이와 ${v0}를 위한 맞춤 솔루션</span></div>`));
@@ -948,10 +949,7 @@ function reportPart9() {
 
     $content.append($(`<div class="title"><img src="./images/report/no9.png" /><span>아이와 ${v0}를 위한 맞춤 솔루션</span></div>`));
     $content.append($(`<img class="img-9-1" src="./images/report/9_1.png" >`));
-    $content.append($(`<div class="item round"><span>장점</span></div>`));
-    $content.append($(`<div class="desc round-bottom h200 mb20">${v7}</div>`));
-    $content.append($(`<div class="item round"><span>단점</span></div>`));
-    $content.append($(`<div class="desc round-bottom h200 mb20">${v8}</div>`));
+    $content.append($(`<div class="desc round-all h700">${v7}</div>`));
     makePageContent();
     
 }
@@ -1146,7 +1144,7 @@ function stress(id, title, data) {
         $Table.append('<tr><td>' + data.labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + data.descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
     }
     if (id != "life_stress") {
-        $Table.append('<tr class="avg"><td>' + data.labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + data.descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
+        $Table.append('<tr class="avg"><td class="black">' + data.labels[i] + '</td><td class="black">' + datas[i] + '</td><td class="left">' + data.descs[i] + '</td><td class="black">' + getGrade(datas[i] ) + '</td></tr>');	
     } else {
         $Table.append('<tr><td>' + data.labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + data.descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
     }

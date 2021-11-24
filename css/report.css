@@ -273,8 +273,10 @@ progress::before {
 .page .middle .content .desc.round-right-bottom {border-radius:0 16px 16px 16px}
 .page .middle .content .desc.round-all {border-radius:16px 16px 16px 16px}
 
+.page .middle .content .desc.h700 {height:700px}
 .page .middle .content .desc.h250 {height:250px}
 .page .middle .content .desc.h200 {height:200px}
+.page .middle .content .desc.h180 {height:180px}
 .page .middle .content .desc.h150 {height:150px}
 .page .middle .content .desc.h100 {height:100px}
 .page .middle .content .desc.mt10 {margin-top:10px;}
@@ -292,6 +294,7 @@ progress::before {
 .page .middle .content .table TABLE TD {font-size:11pt;font-weight:400;text-align: center;padding:3px 0}
 .page .middle .content .table TABLE TR::nth-child(1) TD {padding:6px 0 3px 0}
 .page .middle .content .table TABLE TD.left {text-align: left;}
+.page .middle .content .table TABLE TD.black {color:#000000;font-weight:600}
 .page .middle .content .table TABLE TD.red {color:#FF0000;font-weight:600}
 .page .middle .content .table TABLE TR.avg {background-color: #F2A148; }
 
@@ -306,7 +309,7 @@ progress::before {
 .page .middle .content .item  span {margin-left:15px;font-size:12pt;font-weight:800;color:rgb(110,110,110);letter-spacing:0px;}
 
 .page .middle .content .img-4-1 {margin-left:400px;}
-.page .middle .content .img-6-1 {margin-left:400px;}
+.page .middle .content .img-6-1 {margin-left:400px;margin-top:-50px}
 .page .middle .content .img-8-1 {margin-left:400px;margin-top:-50px}
 .page .middle .content .img-9-1 {margin-left:330px;margin-top:-90px}
 
