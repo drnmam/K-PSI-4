@@ -241,7 +241,7 @@ progress::before {
 .page .cover .observation-date2 {position: absolute;top:549px;left:290px; font-size:16px;font-weight:600}
 
 .page .top {margin:0;padding:0;width:794px;height:90px;background-image: url("../images/report/top.png");}
-.page .middle {margin:0;padding:0;width:794px;height:948px;background-image: url("../images/report/line.png");}
+.page .middle {margin:-1px 0 0 0;padding:0;width:794px;height:948px;background-image: url("../images/report/line.png");}
 .page .bottom {margin:0;padding:0;width:794px;height:85px;background-image: url("../images/report/bottom.png");text-align:center}
 .page .bottom .page-no {display: inline-block;margin-top:30px;font-size:18px;font-weight:800}
 
@@ -266,7 +266,7 @@ progress::before {
 .page .middle .content .subtitle {margin:0 0 0 30px;padding:0 1px;width:614px;height:60px;background-image: url("../images/report/subtitle_ic.png");background-position-y:35%;background-repeat: no-repeat;}
 .page .middle .content .subtitle span {position:relative;left:30px;top:15px;font-size:18pt;color:#E7608B}
 
-.page .middle .content .desc {margin-left:32px;padding:15px;width:575px;height:330px;background-color:rgba(252,226,199,0.3);text-align: left;color:rgb(0,0,0);font-size:12pt;font-weight:600;line-height: 16pt;}
+.page .middle .content .desc {margin-left:32px;padding:15px;width:575px;height:330px;background-color:rgba(252,226,199,0.3);text-align: left;color:rgb(0,0,0);font-size:12pt;font-weight:600;line-height: 16pt;overflow: hidden;}
 .page .middle .content .desc.round-right {border-radius:0 16px 0 0}
 .page .middle .content .desc.round-top {border-radius:16px 16px 0 0}
 .page .middle .content .desc.round-bottom {border-radius:0 0 16px 16px}
