@@ -13,23 +13,23 @@ const data21 = {
 
 const data22 = {
     "keys":["v2211", "v2212", "v2221", "v2222", "v2231", "v2232", "v2241", "v2242"],
-    "labels" : ["유능감", "고립", "애착", "건강", "역할제한", "우울", "양육파트너 관계", "평균"],
+    "labels" : ["유능감", "고립",  "건강", "양육파트너 관계", "역할제한", "우울", "애착", "평균"],
     "descs" :  ["부모 역할에 대한 능력감과 얼마나 편안하게 느끼고 있는지 정도", 
                 "사회적 지지정도", 
-                "친밀도를 느끼는 정도 및 자녀의 요구를 잘 관찰하고 반응할 수 있는 능력", 
                 "전반적인 양육 스트레스에 영향을 미칠 수 있는 부모의 건강정도", 
+                "양육파트너로부터 받는 정서적 및 물리적 지지에 대한 부모의 지각", 
                 "부모 역할의 결과로 나타나는 자유의 제한 및 개인 정체성의 제약에 대한 지각", 
                 "부모의 정서적인 상태", 
-                "양육파트너로부터 받는 정서적 및 물리적 지지에 대한 부모의 지각",
+                "친밀도를 느끼는 정도 및 자녀의 요구를 잘 관찰하고 반응할 수 있는 능력",
                 ""],
     "colors" : ["#F2A148", "#F2A148","#F2A148","#F2A148","#F2A148", "#F2A148", "#F2A148", "#F2A148"]
 }
 
 const data23 = {
-    "keys":["v2311", "v2312"],
-    "labels" :  ["총 스트레스", "생활 스트레스"],
-    "descs" :   ["자녀영역 및 부모영역 스트레스 총합",  "부모가 현재 겪고 있는 부모·자녀관계 이외의 스트레스 양"],
-    "colors" : ["#F2A148", "#F2A148"]
+    "keys":["v2311", "v2312", "v2321"],
+    "labels" :  ["총 스트레스", "생활 스트레스", " 평균"],
+    "descs" :   ["자녀영역 및 부모영역 스트레스 총합",  "부모가 현재 겪고 있는 부모·자녀관계 이외의 스트레스 양", ""],
+    "colors" : ["#F2A148", "#F2A148","#F2A148"]
 }
 
 const data32 = [
@@ -525,7 +525,7 @@ const data33 = [
         {"v3352":[
             "아이가 한 말을 부정하지 않고 수용한다.",
             "아이가 한 말을 부정하지 않고 수용한다는 것은 아이의 의견을 존중하고 잘 수용해 준다는 것입니다. \
-            평소에 아이의 의견을 무시하거나 비�����하지 않는지 점검해 보세요. \
+            평소에 아이의 의견을 무시하거나 비난하지 않는지 점검해 보세요. \
             ☞ 아이가 부모와 반대되는 의견을 이야기할 때, “너의 생각은 그렇구나”라고 이야기하며 아이의 말을 비난하지 말고 그대로 수용해 주세요. \
             그런 후 안 되는 이유에 대해 아이의 눈높이에 맞춰 아이가 이해할 수 있도록 설명해 주세요. ",
             "아이가 한 말을 부정하지 않고 수용하는 모습을 보이네요. \
@@ -566,7 +566,208 @@ const data33 = [
         ]}]},    
 ];
 //--------------------------------------------------------------------------------------------------------------------------------------------
+let hIndex = 0;
+$(document).ready(function() {
+    stressForm(data21, 'child-stress');
+    stressForm(data22, 'parent-stress');
+    stressForm(data23, 'life-stress');
+    interactionForm(data32, "child-interaction");
+    interactionForm(data33, "parent-interaction");
 
+    let $hTabItems = $('.report-htab>ul>li');
+    //console.log($hTabItems);
+    let $vTabItems = $('.report-vtab>ul>li');
+    //console.log($vTabItems);
+    
+    $hTabItems.click(function() {
+        $hTabItems.removeClass('active');
+        $(this).addClass('active');
+
+        hIndex = $hTabItems.index($(this));
+        console.log(hIndex);
+        $('.report-hbox').hide().eq(hIndex).show();
+        
+        $vTabItems.eq((hIndex-1) * 3).trigger("click");
+
+        //$('.docu').hide();
+        if (hIndex == 0) {
+            $('.prev').hide();
+            $('.next').show();
+            //$(".report-hbox").niceScroll().remove();
+            //$(".report-vbox").niceScroll().remove();
+        } else if(hIndex == 3) {
+            $('.prev').show();
+            $('.next').hide();
+            //$('.docu').show();
+            $(".report-hbox").niceScroll({cursorborder:"",cursoropacitymin:0.4,cursorcolor:"#ccc",boxzoom:false});
+            $(".report-vbox").niceScroll().remove();
+        } else {
+            $('.prev').show();
+            $('.next').show();
+            $(".report-vbox").niceScroll({cursorborder:"",cursoropacitymin:0.4,cursorcolor:"#ccc",boxzoom:false});
+            //$(".report-hbox").niceScroll().remove();
+        }
+        setAnchor(hIndex, 0);
+    });
+
+    $hTabItems.eq(0).trigger("click");
+
+    $vTabItems.click(function() {
+        $vTabItems.removeClass('active');
+        $(this).addClass('active');
+
+        let index = $vTabItems.index($(this));
+        $('.report-vbox').hide().eq(index).show();
+
+        setAnchor(hIndex, index);
+    });
+
+    //console.log($('.next'))
+    $('.next').click(function(){
+        $hTabItems.eq(hIndex + 1).trigger("click");	
+    });
+
+    $('.prev').click(function(){
+        $hTabItems.eq(hIndex - 1).trigger("click");	
+    });
+
+    $('.go-preview').click(function(){
+        preview();
+    });
+
+    $('.preview').click(function(){
+        $("form").submit();
+    });
+    $('.dim-layer .dim-bg').click(function(){
+        $('.dim-layer').fadeOut();
+        return false;
+    });
+
+    $('.close').click(function(){
+        $('.dim-layer').fadeOut();
+        $("#report-alert").hide();
+        $("#report-preview").hide();
+        return false;	
+    });
+    //$("#preview").attr("href","K-PSI-4_preview.html");
+
+    //$vTabItems.eq(hIndex * 3).trigger("click");
+
+    $(".datepicker").datepicker({
+        dateFormat: 'yy년 mm월 dd일' //Input Display Format 변경
+        ,showOtherMonths: true //빈 공간에 현재월의 앞뒤월의 날짜를 표시
+        ,showMonthAfterYear:true //년도 먼저 나오고, 뒤에 월 표시
+        ,changeYear: true //콤보박스에서 년 선택 가능
+        ,changeMonth: true //콤보박스에서 월 선택 가능                
+        ,showOn: "both" //button:버튼을 표시하고,버튼을 눌러야만 달력 표시 ^ both:버튼을 표시하고,버튼을 누르거나 input을 클릭하면 달력 표시  
+        ,buttonImage: "./images/common/calendar.png" //버튼 이미지 경로
+        ,buttonImageOnly: true //기본 버튼의 회색 부분을 없애고, 이미지만 보이게 함
+        ,buttonText: "선택" //버튼에 마우스 갖다 댔을 때 표시되는 텍스트                
+        ,yearSuffix: "년" //달력의 년도 부분 뒤에 붙는 텍스트
+        ,monthNamesShort: ['1','2','3','4','5','6','7','8','9','10','11','12'] //달력의 월 부분 텍스트
+        ,monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'] //달력의 월 부분 Tooltip 텍스트
+        ,dayNamesMin: ['일','월','화','수','목','금','토'] //달력의 요일 부분 텍스트
+        ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
+        ,minDate: "-10Y" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
+        ,maxDate: "+1M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
+    });                    
+    
+    //초기값을 오늘 날짜로 설정
+    $('.datepicker').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)            
+
+    console.log($('form'))
+
+    $.validator.setDefaults({ ignore: '' });
+    var validator = $("form").validate({
+        invalidHandler: function() {
+            console.log( validator.numberOfInvalids() + " field(s) are invalid" );
+            if (validator.numberOfInvalids() > 0) {
+                showLayerPopup('report-alert');
+                console.log(validator.numberOfInvalids());
+                $('#invalid-count').text(validator.numberOfInvalids());
+            }
+        },
+        errorPlacement: function(error, element) {
+            // don't add the error labels
+            // if ( element.is(":radio") ) 
+            // {
+            // 	element.parents().addClass("error");
+            // } 
+            return true;
+        },
+        submitHandler: function(form) {
+            // 필요에 따라 ajax를 사용한 제출등으로 변경가능.
+            preview();
+            return false;
+        }
+    });
+    console.log(validator);
+
+    //$( "input" ).checkboxradio();
+    
+    $('.print-pdf').click(async function(){
+        $data.title = $nPage;
+        $('.report-processing-table').show();
+        console.log("start");
+        await HTML2PDF();	
+        console.log("end");
+        $('.report-processing-table').hide();
+    });
+}); //ready
+
+function setAnchor(hIndex, vIndex) {
+    console.log(hIndex + ":" + vIndex);
+    if (hIndex == 0) {
+        $("#preview").attr("href","#cover");
+    } else if (hIndex == 1) {
+        if (vIndex == 0) {
+            $("#preview").attr("href","#report-part21");
+        } else if (vIndex == 1) {
+            $("#preview").attr("href","#report-part22");
+        } else if (vIndex == 2) {
+            $("#preview").attr("href","#report-part23");
+        }
+    } else if (hIndex == 2) {
+        if (vIndex == 3) {
+            $("#preview").attr("href","#report-part4");
+        } else if (vIndex == 4) {
+            $("#preview").attr("href","#report-part5");
+        } else if (vIndex == 5) {
+            $("#preview").attr("href","#report-part7");
+        }
+    } else {
+        $("#preview").attr("href","#report-part9");
+    }
+}
+
+function showLayerPopup(id) {
+    let $el = $(`#${id}`);
+
+    $el.show();
+
+    $('.dim-layer').fadeIn();
+
+    let $elWidth = ~~($el.outerWidth()),
+        $elHeight = ~~($el.outerHeight()),
+        docWidth = $(document).width(),
+        docHeight = $(document).height();
+
+    if ($elHeight < docHeight || $elWidth < docWidth) {
+        $el.css({
+            marginTop: -$elHeight / 2,
+            marginLeft: -$elWidth / 2
+        });
+    } else {
+        $el.css({top: 0, left: 0});
+    }		
+}
+
+function preview() {
+    showLayerPopup('report-preview');
+    previewReport();
+    initProgress();	
+}
+//--------------------------------------------------------------------------------------------------------------------------------------------
 function interactionForm(data, tbodyId) {
 
     $tBody = $(`#${tbodyId}`);
@@ -641,9 +842,6 @@ function stressForm(data, tbodyId) {
 
         $tBody.append($tr);
     }
-   
-
-   
 }
 //--------------------------------------------------------------------------------------------------------------------------------------------
 let $reportContainer = $("#report-container");
@@ -656,8 +854,6 @@ let $content;
 let $bottom;
 let $nPage = 1;
 
-
-
 $data = {
     autoCheck: 32 ,
     size:32,
@@ -667,17 +863,6 @@ $data = {
     title: '',
     isOnly:true
 };
-
-$(document).ready(function() {
-    $('.print-pdf').click(async function(){
-        $data.title = $nPage;
-        $('.report-processing-table').show();
-        console.log("start");
-        await HTML2PDF();	
-        console.log("end");
-        $('.report-processing-table').hide();
-    });
-});
 
 function previewReport() {
     $nPage = 1;
@@ -783,9 +968,9 @@ function reportPart21() {
     let v = $('#v2151').val();
     $content.append($(`<div class="title"><img src="./images/report/no2.png" /><span>STRESS(1)</span></div>`));
     $content.append($(`<div class="subtitle"><span>자녀의 스트레스 영역</span></div>`));
-    $content.append($(`<div class="chart"><canvas id="child_stress_chart" style="width:100%;max-width:600px"></canvas></div>`));
+    $content.append($(`<div class="chart"><canvas id="child_stress_chart" width="340" height="300"></canvas></div>`));
     $content.append($(`<div id="child_stress_table" class="table"></div>`));
-    $content.append($(`<div class="desc round-all h200 mt40">${v}</div>`));
+    $content.append($(`<div class="desc round-all h250 mt140">${v}</div>`));
  
     makePageContent();
 
@@ -798,9 +983,9 @@ function reportPart22() {
     let v = $('#v2251').val();
     $content.append($(`<div class="title"><img src="./images/report/no2.png" /><span>STRESS(2)</span></div>`));
     $content.append($(`<div class="subtitle"><span>양육자의 스트레스 영역</span></div>`));
-    $content.append($(`<div class="chart"><canvas id="fosterer_stress_chart" style="width:100%;max-width:600px"></canvas></div>`));
+    $content.append($(`<div class="chart"><canvas id="fosterer_stress_chart" width="340" height="300"></canvas></div>`));
     $content.append($(`<div id="fosterer_stress_table" class="table"></div>`));
-    $content.append($(`<div class="desc round-all h200 mt80">${v}</div>`));
+    $content.append($(`<div class="desc round-all h180 mt210">${v}</div>`));
    
     makePageContent();
 
@@ -810,12 +995,12 @@ function reportPart22() {
 function reportPart23() {
     makeReportPart(23);
     makePageContainer($nPage++);
-    let v = $('#v2321').val();
+    let v = $('#v2331').val();
     $content.append($(`<div class="title"><img src="./images/report/no2.png" /><span>STRESS(3)</span></div>`));
     $content.append($(`<div class="subtitle"><span>생활 스트레스 영역</span></div>`));
-    $content.append($(`<div class="chart"><canvas id="life_stress_chart" style="width:100%;max-width:600px"></canvas></div>`));
+    $content.append($(`<div class="chart"><canvas id="life_stress_chart" width="340" height="300"></canvas></div>`));
     $content.append($(`<div id="life_stress_table" class="table"></div>`));
-    $content.append($(`<div class="desc round-all h200 mt40">${v}</div>`));
+    $content.append($(`<div class="desc round-all h250 mt20">${v}</div>`));
     
     makePageContent();
 
@@ -882,12 +1067,8 @@ function reportPart6() {
     $content.append($(`<div class="desc round-all h180 mb20">${v2}</div>`));
     $content.append($(`<div class="subtitle"><span>BJW-TIP (양육스트레스와 연결해 생각해보세요)</span></div>`));
     $content.append($(`<div class="desc round-all h180 mb20">${v3}</div>`));
-    
-
-
 
     makePageContent();
-       
 }
 function reportPart7() {
     makeReportPart(7);
@@ -911,7 +1092,6 @@ function reportPart8() {
     $content.append($(`<div class="desc round-all h180 mb20">${v3}</div>`));
     $content.append($(`<div class="subtitle"><span>BJW-TIP (양육스트레스와 연결해 생각해보세요)</span></div>`));
     $content.append($(`<div class="desc round-all h180 mb20">${v4}</div>`));
-
 
     makePageContent();
 }
@@ -951,7 +1131,6 @@ function reportPart9() {
     $content.append($(`<img class="img-9-1" src="./images/report/9_1.png" >`));
     $content.append($(`<div class="desc round-all h700">${v7}</div>`));
     makePageContent();
-    
 }
 
 // function reportPart10() {
@@ -1101,18 +1280,117 @@ function stress(id, title, data) {
         datas.push($(`#${key}`).val().trim()==''?0:$(`#${key}`).val() * 1) ;
     } );
 
-    new Chart(chartId, {
-        type: "horizontalBar",
+    let options = {
+        type: "radar",
         data: {
             labels: data.labels,
             datasets: [{
-            backgroundColor: data.colors,
-            data: datas
+                data: datas,
+                fill: true,
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgb(54, 162, 235)',
+                pointBackgroundColor: 'rgb(54, 162, 235)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgb(54, 162, 235)'
             }]
         },
         options: {
             legend: {display: false},
+            scale: {
+                gridLines: {
+                    color: '#AAA'
+                },
+                ticks: {
+                    beginAtZero: false,
+                    max: 100,
+                    min: 0,
+                    stepSize: 20,
+                    //fontColor: '#fff',
+                    fontColor: '#444'
+                    //backdropColor: '#444'
+                },
+                pointLabels: {
+                    fontSize: 17,
+                    fontColor: '#000'
+                }
+            }
+        }
+    }
+
+    let ctx = document.getElementById(chartId).getContext('2d');
+    new Chart(ctx, options);
+
+    //append table
+    let $Table = $('<table/>');
+    $Table.append('<colgroup><col width="18%"/><col width="8%"/><col width="64%"/><col width="10%"/></colgroup>');
+    $Table.append('<tbody>');
+    $Table.append('<tr><th>항목</th><th nowrap>표준점수</th><th>설명</th><th>단계</th></tr>');
+    let i;
+    for(i = 0 ;i < data.labels.length - 1; i++) {
+        $Table.append('<tr><td>' + data.labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + data.descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
+    }
+    //if (id != "life_stress") {
+        $Table.append('<tr class="avg"><td class="black">' + data.labels[i] + '</td><td class="black">' + datas[i] + '</td><td class="left">' + data.descs[i] + '</td><td class="black">' + getGrade(datas[i] ) + '</td></tr>');	
+    //} else {
+    //    $Table.append('<tr><td>' + data.labels[i] + '</td><td class="red">' + datas[i] + '</td><td class="left">' + data.descs[i] + '</td><td class="red">' + getGrade(datas[i] ) + '</td></tr>');	
+    //}
+ 
+    $Table.append('</tbody>');
+    $(tableId).append($Table);
+}
+
+function stress2(id, title, data) {
+
+    let chartId = `${id}_chart`;
+    let tableId = `#${id}_table`;
+
+    let datas = [];
+    data.keys.forEach(key => {
+        datas.push($(`#${key}`).val().trim()==''?0:$(`#${key}`).val() * 1) ;
+    } );
+debugger;
+    let ctx = document.getElementById(chartId).getContext('2d');
+
+    new Chart(chartId, {
+        type: "radar",
+        data: {
+            labels: data.labels,
+            datasets: [{
+                //backgroundColor: data.colors,
+                data: datas,
+
+                label: 'Stress',
+                //fill: true,
+                //backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                //borderColor: 'rgb(255, 99, 132)',
+                //pointBackgroundColor: 'rgb(255, 99, 132)',
+                //pointBorderColor: '#fff',
+                //pointHoverBackgroundColor: '#fff',
+                //pointHoverBorderColor: 'rgb(255, 99, 132)'
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: {display: false},
+            scales: {
+                r: {
+                    //suggestedMin: 0,
+                    //suggestedMax: 100,
+                    pointLabels: {
+                      font: {
+                        size: 24
+                      }
+                    }
+                }
+                
+            }
+        }
+        /*
+        options: {
+            legend: {display: false},
             title: {display: false,	text: title},
+            
             scales: {
                 yAxes: [{
                         display: true,
@@ -1131,7 +1409,9 @@ function stress(id, title, data) {
                         }
                     }]
             }
+           
         }
+        */
     });
 
     //append table
@@ -1174,17 +1454,18 @@ async function HTML2PDF() {
         }).then(function(canvas) {
             //let imgData = canvas.toDataURL('image/png'); //캔버스를 default quality(0.91)이미지로 변환
             let imgData = canvas.toDataURL('image/png', 1.0); //캔버스를 high quality(1.0) 이미지로 변환
-            if (i > 0) {
+            console.log(imgData);
+            if (i == 0) {
+                doc.addImage(imgData, 'PNG', 27.64, 39.09, 540.000, 763.710); //이미지를 기반으로 pdf생성, 여백추가
+            } else {
                 doc.addPage();
                 //debugger;
                 showProgressBar(totalPage, i);
                 //$('#page-no').text(i);
-            } 
-            //doc.addImage(imgData, 'PNG', 0, 0, 595.28, 841.89); //이미지를 기반으로 pdf생성
-            doc.addImage(imgData, 'PNG', 28.346, 48.519, 538.588, 756.852); //이미지를 기반으로 pdf생성, 여백추가
-            
+                doc.addImage(imgData, 'PNG', 0,0);//, 13.82, 39.09, 567.640, 802.800); //이미지를 기반으로 pdf생성, 여백추가
+                //doc.addImage(imgData, 'PNG', 0, 0, 595.28, 841.89); //이미지를 기반으로 pdf생성
+            }
         });
-
     }
     // let img = new Image();
     // img.src = './images/report/cover.jpg'

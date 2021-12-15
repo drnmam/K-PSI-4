@@ -266,7 +266,7 @@ progress::before {
 .page .middle .content .subtitle {margin:0 0 0 30px;padding:0 1px;width:614px;height:60px;background-image: url("../images/report/subtitle_ic.png");background-position-y:35%;background-repeat: no-repeat;}
 .page .middle .content .subtitle span {position:relative;left:30px;top:15px;font-size:18pt;color:#E7608B}
 
-.page .middle .content .desc {margin-left:32px;padding:15px;width:575px;height:330px;background-color:rgba(252,226,199,0.3);text-align: left;color:rgb(0,0,0);font-size:12pt;font-weight:600;line-height: 16pt;overflow: hidden;}
+.page .middle .content .desc {margin-left:32px;padding:15px;width:575px;height:330px;background-color:rgba(252,226,199,0.3);text-align: left;color:rgb(0,0,0);font-size:12.75pt;font-weight:400;overflow: hidden;}
 .page .middle .content .desc.round-right {border-radius:0 16px 0 0}
 .page .middle .content .desc.round-top {border-radius:16px 16px 0 0}
 .page .middle .content .desc.round-bottom {border-radius:0 0 16px 16px}
@@ -280,18 +280,26 @@ progress::before {
 .page .middle .content .desc.h150 {height:150px}
 .page .middle .content .desc.h100 {height:100px}
 .page .middle .content .desc.mt10 {margin-top:10px;}
+.page .middle .content .desc.mt20 {margin-top:20px;}
+.page .middle .content .desc.mt30 {margin-top:30px;}
 .page .middle .content .desc.mt40 {margin-top:40px;}
+.page .middle .content .desc.mt60 {margin-top:60px;}
 .page .middle .content .desc.mt70 {margin-top:70px;}
 .page .middle .content .desc.mt80 {margin-top:80px;}
+.page .middle .content .desc.mt100 {margin-top:100px;}
+.page .middle .content .desc.mt130 {margin-top:130px;}
+.page .middle .content .desc.mt140 {margin-top:140px;}
+.page .middle .content .desc.mt160 {margin-top:160px;}
+.page .middle .content .desc.mt210 {margin-top:210px;}
 .page .middle .content .desc.mb10 {margin-bottom:10px;}
 .page .middle .content .desc.mb20 {margin-bottom:20px;}
 .page .middle .content .img-1-2 {margin:100px 0 0 2px}
 
-.page .middle .content .chart  {margin-left:32px;padding:10px;width:555px;height:300px;}
-.page .middle .content .table  {margin:0px;padding:0px;width:643px;height:200px;}
+.page .middle .content .chart  {margin:-25px 0 0 170px;padding:0px;width:340px;height:300px;}
+.page .middle .content .table  {margin:0px;padding:0px;width:643px;height:100px;}
 .page .middle .content .table TABLE {width:100%; border-collapse: collapse;}
-.page .middle .content .table TABLE TH {background-color: #EA6C92;color:#ffffff;font-size:11pt;line-height: 20pt;font-weight:400;text-align: center;}
-.page .middle .content .table TABLE TD {font-size:11pt;font-weight:400;text-align: center;padding:3px 0}
+.page .middle .content .table TABLE TH {background-color: #EA6C92;color:#ffffff;font-size:17px;;font-weight:400;text-align: center;}
+.page .middle .content .table TABLE TD {font-size:17px;font-weight:400;text-align: center;padding:1px 0}
 .page .middle .content .table TABLE TR::nth-child(1) TD {padding:6px 0 3px 0}
 .page .middle .content .table TABLE TD.left {text-align: left;}
 .page .middle .content .table TABLE TD.black {color:#000000;font-weight:600}
@@ -302,11 +310,11 @@ progress::before {
 
 .page .middle .content .group {display:inline-block;margin-left:32px;margin-top:15px;padding-top:5px;width:130px;height:35px;background-color:#EB6C95;text-align: center;border-radius:10px 10px 0 0}
 .page .middle .content .group span {font-size:15pt;font-weight:700;color:#ffffff;letter-spacing:0px;}
-.page .middle .content .group + span {margin-left:50px;font-size:12pt;font-weight:700;color:rgb(110,110,110)}
+.page .middle .content .group + span {margin-left:50px;font-size:12.75pt;font-weight:700;color:rgb(110,110,110)}
 
 .page .middle .content .item {margin-left:32px;padding:3px 0 3px 0;width:575px;background-color:rgba(249,211,224,1);text-align: left;}
 .page .middle .content .item.round {border-radius:0 16px 0 0}
-.page .middle .content .item  span {margin-left:15px;font-size:12pt;font-weight:800;color:rgb(110,110,110);letter-spacing:0px;}
+.page .middle .content .item  span {margin: 0 5px 0 5px;font-size:12.75pt;font-weight:800;color:rgb(110,110,110);letter-spacing:0px;}
 
 .page .middle .content .img-4-1 {margin-left:400px;}
 .page .middle .content .img-6-1 {margin-left:400px;margin-top:-50px}
