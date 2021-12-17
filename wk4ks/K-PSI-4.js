@@ -1462,8 +1462,8 @@ async function HTML2PDF() {
                 //debugger;
                 showProgressBar(totalPage, i);
                 //$('#page-no').text(i);
-                doc.addImage(imgData, 'PNG', 0,0);//, 13.82, 39.09, 567.640, 802.800); //이미지를 기반으로 pdf생성, 여백추가
-                //doc.addImage(imgData, 'PNG', 0, 0, 595.28, 841.89); //이미지를 기반으로 pdf생성
+                //doc.addImage(imgData, 'PNG', 0,0);//, 13.82, 39.09, 567.640, 802.800); //이미지를 기반으로 pdf생성, 여백추가
+                doc.addImage(imgData, 'PNG', 0, 0, 595.28, 841.89); //이미지를 기반으로 pdf생성
             }
         });
     }
